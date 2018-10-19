@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>casilla.h</itemPath>
+      <itemPath>ficha.h</itemPath>
       <itemPath>tablero.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -13,6 +15,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>casilla.cpp</itemPath>
+      <itemPath>ficha.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
       <itemPath>tablero.cpp</itemPath>
     </logicalFolder>
@@ -38,6 +42,14 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="casilla.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="casilla.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ficha.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ficha.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tablero.cpp" ex="false" tool="1" flavor2="0">
@@ -65,6 +77,14 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="casilla.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="casilla.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ficha.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ficha.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tablero.cpp" ex="false" tool="1" flavor2="0">

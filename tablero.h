@@ -1,6 +1,8 @@
 #ifndef TABLERO_H
 #define TABLERO_H
 
+#include "casilla.h"
+
 #include <sstream>
 using namespace std;
 
@@ -13,6 +15,6 @@ public:
 private:
     int filas;
     int columnas;
-    casilla** casillas;
+    casilla*** casillas;
 };
 #endif /* TABLERO_H */

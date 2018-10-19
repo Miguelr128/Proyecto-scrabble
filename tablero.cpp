@@ -1,13 +1,12 @@
 #include "tablero.h"
 
 tablero::tablero(int f, int c) : filas(f), columnas(c), casillas(new casilla**[f]) {
-    for (int i = 0; i < f; i++) {
-        casillas[i] = new casilla*[c];
+    for (int i = 0; i < filas; i++) {
+        casillas[i] = new casilla*[columnas];
     }
-
-    for (int i = 0; i < f; i++) {
-        for (int j = 0; j < c; j++) {
-            casillas[i][j] = new casilla();
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+        casillas[i][j] = new casilla(&borrador);
         }
     }
 }
