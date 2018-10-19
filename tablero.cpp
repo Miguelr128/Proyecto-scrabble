@@ -6,7 +6,7 @@ tablero::tablero(int f, int c) : filas(f), columnas(c), casillas(new casilla**[f
     }
     for (int i = 0; i < filas; i++) {
         for (int j = 0; j < columnas; j++) {
-        casillas[i][j] = new casilla(&borrador);
+        casillas[i][j] = new casilla(1);
         }
     }
 }
