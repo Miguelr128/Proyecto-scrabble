@@ -5,8 +5,12 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>casilla.h</itemPath>
+      <itemPath>diccionario.h</itemPath>
       <itemPath>ficha.h</itemPath>
+      <itemPath>jugador.h</itemPath>
+      <itemPath>sistema.h</itemPath>
       <itemPath>tablero.h</itemPath>
+      <itemPath>vectorficha.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -16,9 +20,13 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>casilla.cpp</itemPath>
+      <itemPath>diccionario.cpp</itemPath>
       <itemPath>ficha.cpp</itemPath>
+      <itemPath>jugador.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
+      <itemPath>sistema.cpp</itemPath>
       <itemPath>tablero.cpp</itemPath>
+      <itemPath>vectorficha.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -46,15 +54,31 @@
       </item>
       <item path="casilla.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="diccionario.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="diccionario.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="ficha.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ficha.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="jugador.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jugador.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sistema.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sistema.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tablero.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tablero.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vectorficha.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vectorficha.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -81,15 +105,31 @@
       </item>
       <item path="casilla.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="diccionario.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="diccionario.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="ficha.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ficha.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="jugador.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="jugador.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sistema.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sistema.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tablero.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tablero.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vectorficha.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vectorficha.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

@@ -6,8 +6,7 @@
 using namespace std;
 
 int main() {
-    int borrador = 5;
-    casilla* cas = new casilla (borrador);
+    casilla* cas = new casilla (5);
     tablero* tab = new tablero (13,13);
     return 0;
 }

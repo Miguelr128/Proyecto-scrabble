@@ -3,9 +3,11 @@
 
 class ficha {
 public:
-    ficha();
+    ficha(char, int);
     virtual ~ficha();
 private:
-
+    char letra;
+    int valorLetra;
+    char letraComodin;
 };
 #endif /* FICHA_H */

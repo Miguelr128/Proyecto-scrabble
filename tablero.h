@@ -12,6 +12,8 @@ public:
     void reservarPosicion(int, int);
     string toString() const;
     virtual ~tablero();
+//    void premiarPalabra(jugador*);
+//    void premiarLetra(char);
 private:
     int filas;
     int columnas;
