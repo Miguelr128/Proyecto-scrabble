@@ -8,6 +8,6 @@ public:
 private:
     char letra;
     int valorLetra;
-    char letraComodin;
+    bool letraComodin;
 };
 #endif /* FICHA_H */

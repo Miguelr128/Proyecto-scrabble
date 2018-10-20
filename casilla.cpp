@@ -2,7 +2,17 @@
 
 #include "casilla.h"
 
-casilla::casilla(int valorCasilla) : valorCasilla(valorCasilla), fichaColocada(NULL) {
+casilla::casilla(char _colorCasilla) : colorCasilla(_colorCasilla), fichaColocada(NULL) {
+}
+
+void casilla::setColor(char c){
+    colorCasilla = c;
+}
+
+string casilla::toString(){
+    stringstream s;
+    s<<colorCasilla;
+    return s.str();
 }
 
 casilla::~casilla() {

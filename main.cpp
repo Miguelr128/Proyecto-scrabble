@@ -6,7 +6,9 @@
 using namespace std;
 
 int main() {
-    casilla* cas = new casilla (5);
-    tablero* tab = new tablero (13,13);
+    tablero* tab = new tablero (8,13);
+    
+    cout<<tab->toString();
+    
     return 0;
 }
