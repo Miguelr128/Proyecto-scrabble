@@ -19,7 +19,6 @@ int main() {
     string linea_fic;
     char letra_fic;
     int valorLetra_fic;
-    int cantidadLetra_fic;
     
     archivo_dic.open("../diccionario.txt", ios::in);
     archivo_fic.open("../fichas.txt", ios::in);
@@ -32,9 +31,8 @@ int main() {
             palabra_dic = obtenerValor(r);
             letra_fic = obtenerValorCaracter(x);
             valorLetra_fic = obtenerValorEntero(x);
-            cantidadLetra_fic = obtenerValorEntero(x);
             cout << palabra_dic << endl;
-            cout << valorLetra_fic << ";" << cantidadLetra_fic << endl;
+            cout << valorLetra_fic << ";" << letra_fic << endl;
         } catch (int ex) {
         }
     }

@@ -4,7 +4,7 @@
 
 vectorficha::vectorficha() : tamano(100), cantidad(0), ptrFicha(new ficha* [tamano]) {
     for (int i = 0; i < tamano; i++)
-        ptrFicha[i] = new ficha(' ', 0, 0);
+        ptrFicha[i] = new ficha(' ', 0);
 }
 
 vectorficha::~vectorficha() {
