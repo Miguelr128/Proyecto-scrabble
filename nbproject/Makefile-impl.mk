@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Proyecto-scrabble
+PROJECTNAME=Proyecto 2
 
 # Active Configuration
 DEFAULTCONF=Debug

@@ -20,8 +20,8 @@ int main() {
     char letra_fic;
     int valorLetra_fic;
     
-    archivo_dic.open("../diccionario.txt", ios::in);
-    archivo_fic.open("../fichas.txt", ios::in);
+    archivo_dic.open("diccionario.txt", ios::in);
+    archivo_fic.open("fichas.txt", ios::in);
     while (archivo_dic.good() && archivo_fic.good()) {
         getline(archivo_dic, linea_dic);
         getline(archivo_fic, linea_fic);
