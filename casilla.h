@@ -9,6 +9,7 @@ using namespace std;
 class casilla {
 public:
     casilla(char);
+    char getColor();
     void setColor(char);
     string toString();
     virtual ~casilla();

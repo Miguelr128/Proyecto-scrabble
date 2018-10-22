@@ -1,10 +1,10 @@
 #ifndef TABLERO_H
 #define TABLERO_H
 
-#include "casilla.h"
-
 #include <sstream>
 using namespace std;
+
+#include "casilla.h"
 
 class tablero {
 public:

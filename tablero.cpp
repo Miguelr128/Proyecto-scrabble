@@ -1,3 +1,4 @@
+using namespace std;
 #include "tablero.h"
 
 tablero::tablero(int f, int c) : filas(f), columnas(c), casillas(new casilla**[f]) {

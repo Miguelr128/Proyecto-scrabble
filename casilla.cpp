@@ -9,6 +9,10 @@ void casilla::setColor(char c){
     colorCasilla = c;
 }
 
+char casilla::getColor(){
+    return colorCasilla;
+}
+
 string casilla::toString(){
     stringstream s;
     s<<colorCasilla;
