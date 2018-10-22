@@ -30,8 +30,7 @@ int main() {
    
     while (archivo_fic.good()) {
         getline(archivo_fic, linea_fic);
-        stringstream x(linea_fic);
-        
+        stringstream x(linea_fic);        
         try {
             letra_fic = obtenerValorCaracter(x);
             fichasSistema->setFicha(i, letra_fic);
@@ -60,7 +59,6 @@ int main() {
 
     archivo_dic.close();
     archivo_fic.close();
-    
     delete fichasSistema;
     
     return 0;

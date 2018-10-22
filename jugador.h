@@ -21,7 +21,7 @@ public:
 private:
     string nombre;
     tablero* juego;
-    vectorficha* fichasDisponibles;
+    vectorficha* ptrMatrizfichas;
     jugador* otroJugador;
     int puntos;
 };

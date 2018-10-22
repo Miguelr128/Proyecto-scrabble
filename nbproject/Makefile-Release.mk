@@ -42,7 +42,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/sistema.o \
 	${OBJECTDIR}/tablero.o \
-	${OBJECTDIR}/vectorficha.o
+	${OBJECTDIR}/vectorficha.o \
+	${OBJECTDIR}/vectorfichajugador.o
 
 
 # C Compiler Flags
@@ -63,11 +64,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/proyecto_2.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/proyecto-scrabble.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/proyecto_2.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/proyecto-scrabble.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/proyecto_2 ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/proyecto-scrabble ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/casilla.o: casilla.cpp
 	${MKDIR} -p ${OBJECTDIR}
@@ -108,6 +109,11 @@ ${OBJECTDIR}/vectorficha.o: vectorficha.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vectorficha.o vectorficha.cpp
+
+${OBJECTDIR}/vectorfichajugador.o: vectorfichajugador.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vectorfichajugador.o vectorfichajugador.cpp
 
 # Subprojects
 .build-subprojects:

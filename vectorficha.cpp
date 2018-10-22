@@ -18,7 +18,7 @@ void vectorficha::setValor(int i, int v){
 vectorficha::~vectorficha() {
 }
 
-string vectorficha::toString(){
+string vectorficha::toString() {
     stringstream s;
     for(int i = 0; i < cantidad; i++){
         s<<ptrFicha[i]->toString()<<endl;
@@ -26,5 +26,20 @@ string vectorficha::toString(){
     return s.str();
 }
 
-vectorficha::vectorficha(int tamano) : tamano(tamano), cantidad(0), ptrFicha(new ficha* [this->tamano]) {
+void vectorficha::eliminarFicha(ficha*& ficha) {
+    if (buscarFicha(ficha) != false) {
+        int posFicha = buscarFicha(ficha);
+        for (int i = cantidad; i = posFicha; i--) {
+            ptrFicha[cantidad - 1] = ptrFicha[cantidad];
+            cantidad --;
+        }
+    }
+}
+
+int vectorficha::buscarFicha(ficha* fichaEnBusca) {
+    for (int i = 0; i < cantidad; i++)
+        if (fichaEnBusca == ptrFicha[i])
+            return i;
+        else
+            return false;
 }

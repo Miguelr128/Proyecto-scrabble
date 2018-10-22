@@ -10,7 +10,8 @@ public:
     void setFicha(int, char);
     void setValor(int, int);
     string toString();
-    vectorficha(int);
+    void eliminarFicha(ficha*&);
+    int buscarFicha(ficha*);
 private:
     int tamano;
     int cantidad;
