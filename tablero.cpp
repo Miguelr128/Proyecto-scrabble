@@ -54,6 +54,10 @@ void tablero::verde(){
 tablero::~tablero() {
 }
 
+void tablero::reservarPosicion(int i, int j, ficha* f){
+    casillas[i][j]->setFicha(f);
+}
+
 string tablero::toString() const {
     stringstream s;
     s << "";

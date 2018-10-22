@@ -2,6 +2,7 @@
 #define JUGADOR_H
 
 #include "vectorficha.h"
+#include "tablero.h"
 
 #include <string>
 using std::string;
@@ -11,7 +12,7 @@ public:
     jugador(string);
     virtual ~jugador();
 //    void formarPalabra();
-//    void colocarPalabra(tablero*);
+//    void colocarFicha(int, int, ficha*);
 //    void nuevasFichas(vectorficha*);
 //    void cambiarFichas();
 //    void pasarTurno();
@@ -19,7 +20,9 @@ public:
     
 private:
     string nombre;
+    tablero* juego;
     vectorficha* fichasDisponibles;
+    jugador* otroJugador;
     int puntos;
 };
 #endif /* JUGADOR_H */

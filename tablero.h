@@ -9,7 +9,7 @@ using namespace std;
 class tablero {
 public:
     tablero(int, int);
-    void reservarPosicion(int, int);
+    void reservarPosicion(int, int, ficha*);
     string toString() const;
     void rosado();
     void amarillo();

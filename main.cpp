@@ -4,6 +4,8 @@
 #include <fstream>
 
 #include "tablero.h"
+#include "ficha.h"
+#include "diccionario.h"
 
 using namespace std;
 
@@ -12,6 +14,8 @@ int obtenerValorEntero(istream&, char = '\t');
 char obtenerValorCaracter(istream&, char = '\t');
 
 int main() {
+    
+    vectorficha* fichasSistema = new vectorficha();
     fstream archivo_dic;
     string linea_dic;
     string palabra_dic;
@@ -19,29 +23,46 @@ int main() {
     string linea_fic;
     char letra_fic;
     int valorLetra_fic;
+    int i = 0;
     
     archivo_dic.open("diccionario.txt", ios::in);
     archivo_fic.open("fichas.txt", ios::in);
-    while (archivo_dic.good() && archivo_fic.good()) {
-        getline(archivo_dic, linea_dic);
+   
+    while (archivo_fic.good()) {
         getline(archivo_fic, linea_fic);
-        stringstream r(linea_dic);
         stringstream x(linea_fic);
+        
         try {
-            palabra_dic = obtenerValor(r);
             letra_fic = obtenerValorCaracter(x);
+            fichasSistema->setFicha(i, letra_fic);
             valorLetra_fic = obtenerValorEntero(x);
-            cout << palabra_dic << endl;
-            cout << valorLetra_fic << ";" << letra_fic << endl;
+            fichasSistema->setValor(i, valorLetra_fic);
+//            cout << valorLetra_fic << ";" << letra_fic << endl;
+            i++;
         } catch (int ex) {
         }
     }
     
+    while (archivo_dic.good()) {
+        getline(archivo_dic, linea_dic);
+        stringstream r(linea_dic);
+        try {
+            palabra_dic = obtenerValor(r);
+            cout << palabra_dic << endl;
+        } catch (int ex) {
+        }
+    }
+    
+    cout<<fichasSistema->toString()<<endl;
+    
     tablero* tab = new tablero(13, 13);
-    cout << tab -> toString();
+//    cout << tab -> toString();
 
     archivo_dic.close();
     archivo_fic.close();
+    
+    delete fichasSistema;
+    
     return 0;
 }
 

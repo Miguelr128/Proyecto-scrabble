@@ -13,6 +13,10 @@ char casilla::getColor(){
     return colorCasilla;
 }
 
+void casilla::setFicha(ficha* f){
+    fichaColocada = f;
+}
+
 string casilla::toString(){
     stringstream s;
     s<<colorCasilla;

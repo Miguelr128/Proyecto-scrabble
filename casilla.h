@@ -11,6 +11,7 @@ public:
     casilla(char);
     char getColor();
     void setColor(char);
+    void setFicha(ficha*);
     string toString();
     virtual ~casilla();
 private:
