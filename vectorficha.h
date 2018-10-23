@@ -9,9 +9,9 @@ public:
     virtual ~vectorficha();
     void setFicha(int, char);
     void setValor(int, int);
+    char getFicha(int);
     string toString();
-    void eliminarFicha(ficha*&);
-    int buscarFicha(ficha*);
+    void eliminarFicha(int);
 private:
     int tamano;
     int cantidad;

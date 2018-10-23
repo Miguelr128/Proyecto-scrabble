@@ -11,6 +11,7 @@ public:
     void setLetra(char);
     void setValorLetra(int);
     void setLetraComodin(bool);
+    char getLetra();
     string toString();
     virtual ~ficha();
 private:

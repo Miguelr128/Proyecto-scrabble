@@ -7,12 +7,12 @@
 
 class vectorfichajugador {
 public:
-    vectorfichajugador();
+    vectorfichajugador(int);
     virtual ~vectorfichajugador();
-    void pasarFichas(vectorficha**&);
+    void pasarFichas(vectorficha*);
 private:
     int tamano;
     int cantidad;
-    vectorficha* vector[7];
+    char* vector;
 };
 #endif /* VECTORFICHAJUGADOR_H */

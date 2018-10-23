@@ -15,6 +15,10 @@ void vectorficha::setValor(int i, int v){
     ptrFicha[i]->setValorLetra(v);
 }
 
+char vectorficha::getFicha(int i){
+    return ptrFicha[i]->getLetra();
+}
+
 vectorficha::~vectorficha() {
 }
 
@@ -26,20 +30,11 @@ string vectorficha::toString() {
     return s.str();
 }
 
-void vectorficha::eliminarFicha(ficha*& ficha) {
-    if (buscarFicha(ficha) != false) {
-        int posFicha = buscarFicha(ficha);
-        for (int i = cantidad; i = posFicha; i--) {
-            ptrFicha[cantidad - 1] = ptrFicha[cantidad];
-            cantidad --;
+void vectorficha::eliminarFicha(int ficha) {
+    if(ptrFicha[ficha] != NULL){
+        for(int i = ficha; i < cantidad-1;i++){
+            ptrFicha[i] = ptrFicha[i+1];
         }
+        cantidad --;
     }
-}
-
-int vectorficha::buscarFicha(ficha* fichaEnBusca) {
-    for (int i = 0; i < cantidad; i++)
-        if (fichaEnBusca == ptrFicha[i])
-            return i;
-        else
-            return false;
 }

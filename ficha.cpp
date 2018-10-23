@@ -17,6 +17,10 @@ void ficha::setValorLetra(int v){
     valorLetra = v;
 }
 
+char ficha::getLetra(){
+    return letra;
+}
+
 string ficha::toString(){
     stringstream s;
     s<<"letra: "<<letra<<endl;
