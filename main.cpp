@@ -9,19 +9,20 @@
 
 using namespace std;
 
-string obtenerValor(istream&, char = '\t');
+string obtenerValor(istream&, char);
 int obtenerValorEntero(istream&, char = '\t');
 char obtenerValorCaracter(istream&, char = '\t');
 
 int main() {
     
     vectorficha* fichasSistema = new vectorficha();
+    diccionario* palabrasDiccionario = new diccionario(3000);
     fstream archivo_dic;
     string linea_dic;
     string palabra_dic;
     fstream archivo_fic;
     string linea_fic;
-    char letra_fic;
+    string letra_fic;
     int valorLetra_fic;
     int i = 0;
     
@@ -32,9 +33,9 @@ int main() {
         getline(archivo_fic, linea_fic);
         stringstream x(linea_fic);        
         try {
-            letra_fic = obtenerValorCaracter(x);
+            letra_fic = obtenerValorCaracter(x, '\t');
             fichasSistema->setLetra(i, letra_fic);
-            valorLetra_fic = obtenerValorEntero(x);
+            valorLetra_fic = obtenerValorEntero(x, '\t');
             fichasSistema->setValor(i, valorLetra_fic);
 //            cout << valorLetra_fic << ";" << letra_fic << endl;
             i++;
@@ -46,13 +47,15 @@ int main() {
         getline(archivo_dic, linea_dic);
         stringstream r(linea_dic);
         try {
-            palabra_dic = obtenerValor(r);
-            cout << palabra_dic << endl;
+            palabra_dic = obtenerValor(r, '\t');
+            palabrasDiccionario->agregar(palabra_dic);
+//            cout << palabra_dic << endl;
         } catch (int ex) {
         }
     }
     
-    cout<<fichasSistema->toString()<<endl;
+//    cout<<fichasSistema->toString()<<endl;
+    cout<<palabrasDiccionario->toString()<<endl;
     
     tablero* tab = new tablero(13, 13);
 //    cout << tab -> toString();

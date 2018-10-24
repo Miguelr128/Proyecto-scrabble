@@ -7,7 +7,7 @@ class vectorficha {
 public:
     vectorficha();
     virtual ~vectorficha();
-    void setLetra(int, char);
+    void setLetra(int, string);
     void setValor(int, int);
     ficha* getFicha(int);
     string toString();

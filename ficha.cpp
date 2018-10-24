@@ -2,10 +2,10 @@
 
 #include "ficha.h"
 
-ficha::ficha(char letra, int valorLetra) : letra(letra), valorLetra(valorLetra), letraComodin(false) {
+ficha::ficha(string letra, int valorLetra) : letra(letra), valorLetra(valorLetra), letraComodin(false) {
 }
 
-void ficha::setLetra(char le){
+void ficha::setLetra(string le){
     letra = le;
 }
 
@@ -17,7 +17,7 @@ void ficha::setValorLetra(int v){
     valorLetra = v;
 }
 
-char ficha::getLetra(){
+string ficha::getLetra(){
     return letra;
 }
 

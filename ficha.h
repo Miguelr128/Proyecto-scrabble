@@ -7,15 +7,15 @@ using namespace std;
 
 class ficha {
 public:
-    ficha(char, int);
-    void setLetra(char);
+    ficha(string, int);
+    void setLetra(string);
     void setValorLetra(int);
     void setLetraComodin(bool);
-    char getLetra();
+    string getLetra();
     string toString();
     virtual ~ficha();
 private:
-    char letra;
+    string letra;
     int valorLetra;
     bool letraComodin;
 };

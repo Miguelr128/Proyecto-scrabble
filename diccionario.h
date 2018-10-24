@@ -5,10 +5,16 @@
 
 class diccionario {
 public:
-    diccionario();
+    diccionario(int);
     virtual ~diccionario();
+    void agregar(string);
+    string toString();
 //    bool validarPalabra();
 private:
+    string* palabras;
+    int cantidad;
+    int tamano;
+    
 //    jugador* palabra;
 };
 #endif /* DICCIONARIO_H */

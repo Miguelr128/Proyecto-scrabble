@@ -4,10 +4,10 @@
 
 vectorficha::vectorficha() : tamano(100), cantidad(100), ptrFicha(new ficha* [100]) {
     for (int i = 0; i < tamano; i++)
-        ptrFicha[i] = new ficha(' ', 0);
+        ptrFicha[i] = new ficha(" ", 0);
 }
 
-void vectorficha::setLetra(int i, char c){
+void vectorficha::setLetra(int i, string c){
     ptrFicha[i]->setLetra(c);
 }
 
