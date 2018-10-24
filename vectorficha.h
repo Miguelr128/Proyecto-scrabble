@@ -9,6 +9,8 @@ public:
     virtual ~vectorficha();
     void setLetra(int, string);
     void setValor(int, int);
+    void setFicha(int i, ficha*);
+    int getCantidad();
     ficha* getFicha(int);
     string toString();
     void eliminarFicha(int);

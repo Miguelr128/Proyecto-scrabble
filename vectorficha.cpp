@@ -15,8 +15,16 @@ void vectorficha::setValor(int i, int v){
     ptrFicha[i]->setValorLetra(v);
 }
 
+void vectorficha::setFicha(int i,ficha* fi){
+    ptrFicha[i] = fi;
+}
+
 ficha* vectorficha::getFicha(int i){
     return ptrFicha[i];
+}
+
+int vectorficha::getCantidad(){
+    return cantidad;
 }
 
 vectorficha::~vectorficha() {

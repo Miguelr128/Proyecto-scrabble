@@ -10,7 +10,8 @@ class vectorfichajugador {
 public:
     vectorfichajugador(int, vectorficha*);
     virtual ~vectorfichajugador();
-    void pasarFichas();
+    void primerasFichas();
+    void cambiar(int);
 private:
     int tamano;
     int cantidad;

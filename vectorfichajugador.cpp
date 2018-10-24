@@ -9,12 +9,21 @@ vectorfichajugador::vectorfichajugador(int x, vectorficha* fi) :tamano(x), canti
 vectorfichajugador::~vectorfichajugador() {
 }
 
-void vectorfichajugador::pasarFichas() {
-    int numero, rango = 90;
+void vectorfichajugador::primerasFichas() {
+    int numero, rango = fichasSistema->getCantidad();
     for (int i = 0; i < tamano; i++) {
         numero = rand() % rango;
         vector[i] = fichasSistema->getFicha(numero);
         fichasSistema->eliminarFicha(numero);
         rango = rango -1;
     }
+}
+
+void vectorfichajugador::cambiar(int i){
+    int numero, rango = fichasSistema->getCantidad();
+    ficha* aux;
+    numero = rand() % rango;
+    aux = vector[i];
+    vector[i] = fichasSistema->getFicha(numero);
+    fichasSistema->setFicha(numero, aux);
 }
