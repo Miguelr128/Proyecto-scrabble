@@ -3,16 +3,18 @@
 
 #include <cstdlib>
 
+#include "ficha.h"
 #include "vectorficha.h"
 
 class vectorfichajugador {
 public:
-    vectorfichajugador(int);
+    vectorfichajugador(int, vectorficha*);
     virtual ~vectorfichajugador();
-    void pasarFichas(vectorficha*);
+    void pasarFichas();
 private:
     int tamano;
     int cantidad;
-    char* vector;
+    ficha** vector;
+    vectorficha* fichasSistema;
 };
 #endif /* VECTORFICHAJUGADOR_H */

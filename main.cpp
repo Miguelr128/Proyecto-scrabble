@@ -33,7 +33,7 @@ int main() {
         stringstream x(linea_fic);        
         try {
             letra_fic = obtenerValorCaracter(x);
-            fichasSistema->setFicha(i, letra_fic);
+            fichasSistema->setLetra(i, letra_fic);
             valorLetra_fic = obtenerValorEntero(x);
             fichasSistema->setValor(i, valorLetra_fic);
 //            cout << valorLetra_fic << ";" << letra_fic << endl;

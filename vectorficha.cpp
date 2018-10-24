@@ -2,12 +2,12 @@
 
 #include "vectorficha.h"
 
-vectorficha::vectorficha() : tamano(100), cantidad(100), ptrFicha(new ficha* [tamano]) {
+vectorficha::vectorficha() : tamano(100), cantidad(100), ptrFicha(new ficha* [100]) {
     for (int i = 0; i < tamano; i++)
         ptrFicha[i] = new ficha(' ', 0);
 }
 
-void vectorficha::setFicha(int i, char c){
+void vectorficha::setLetra(int i, char c){
     ptrFicha[i]->setLetra(c);
 }
 
@@ -15,8 +15,8 @@ void vectorficha::setValor(int i, int v){
     ptrFicha[i]->setValorLetra(v);
 }
 
-char vectorficha::getFicha(int i){
-    return ptrFicha[i]->getLetra();
+ficha* vectorficha::getFicha(int i){
+    return ptrFicha[i];
 }
 
 vectorficha::~vectorficha() {

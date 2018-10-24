@@ -8,6 +8,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/MIGUEL/Documents/NetBeansProjects/Proyecto%202/jugador.h</file>
+            <file>file:/C:/Users/MIGUEL/Documents/NetBeansProjects/Proyecto%202/vectorfichajugador.h</file>
             <file>file:/C:/Users/MIGUEL/Documents/NetBeansProjects/Proyecto%202/tablero.h</file>
             <file>file:/C:/Users/MIGUEL/Documents/NetBeansProjects/Proyecto%202/tablero.cpp</file>
             <file>file:/C:/Users/MIGUEL/Documents/NetBeansProjects/Proyecto%202/ficha.cpp</file>
@@ -15,6 +16,7 @@
             <file>file:/C:/Users/MIGUEL/Documents/NetBeansProjects/Proyecto%202/vectorficha.cpp</file>
             <file>file:/C:/Users/MIGUEL/Documents/NetBeansProjects/Proyecto%202/casilla.h</file>
             <file>file:/C:/Users/MIGUEL/Documents/NetBeansProjects/Proyecto%202/ficha.h</file>
+            <file>file:/C:/Users/MIGUEL/Documents/NetBeansProjects/Proyecto%202/vectorfichajugador.cpp</file>
             <file>file:/C:/Users/MIGUEL/Documents/NetBeansProjects/Proyecto%202/main.cpp</file>
             <file>file:/C:/Users/MIGUEL/Documents/NetBeansProjects/Proyecto%202/vectorficha.h</file>
         </group>
