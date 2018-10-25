@@ -15,7 +15,12 @@ void jugador::pasarTurno(){
     turno = false;
 }
 
-
+char jugador::formarPalabra(string ficha) {
+    char letrasPalabra [7];
+    strcat(letrasPalabra, ficha.c_str());
+    for (int i = 0; i < 7; i++)
+        return letrasPalabra[i];
+}
 
 jugador::~jugador() {
 }

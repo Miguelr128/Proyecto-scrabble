@@ -9,12 +9,11 @@ public:
     virtual ~diccionario();
     void agregar(string);
     string toString();
-//    bool validarPalabra();
+    bool validarPalabra();
 private:
     string* palabras;
     int cantidad;
     int tamano;
-    
-//    jugador* palabra;
+    jugador* palabra;
 };
 #endif /* DICCIONARIO_H */

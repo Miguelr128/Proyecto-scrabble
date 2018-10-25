@@ -5,16 +5,18 @@
 #include "vectorfichajugador.h"
 #include "tablero.h"
 
+#include <string.h>
 #include <string>
 using std::string;
+
 
 class jugador {
 public:
     jugador(string, vectorficha*, bool);
     virtual ~jugador();
-//    void formarPalabra();
+    char formarPalabra(string);
 //    void colocarFicha(int, int, ficha*);
-//    void nuevasFichas(vectorficha*);
+//    void nuevasFichas();
     void fichasInicio();
     void cambiarFichas(int);
     void pasarTurno();
