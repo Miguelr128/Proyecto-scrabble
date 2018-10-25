@@ -27,3 +27,19 @@ void vectorfichajugador::cambiar(int i){
     vector[i] = fichasSistema->getFicha(numero);
     fichasSistema->setFicha(numero, aux);
 }
+
+void vectorfichajugador::nuevasFichas(){
+    int numero, rango = fichasSistema->getCantidad();
+    for (int i = 0; i < tamano; i++) {
+        if(vector[i] == NULL){
+            numero = rand() % rango;
+            vector[i] = fichasSistema->getFicha(numero);
+            fichasSistema->eliminarFicha(numero);
+            rango = rango -1;
+        }
+    }
+}
+
+void vectorfichajugador::cambiarComodin(int i, string l){
+    vector[i]->setLetra(l);
+}

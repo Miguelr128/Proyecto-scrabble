@@ -14,7 +14,7 @@ public:
 //    void finalizarJuego();
 //    string ganador();
 private:
-//    jugador* ptrJugador;
+//    jugador* primerJugador;
 //    tablero* ptrTablero;
 //    int puntajeTotal;
 //    int puntajeTurno;

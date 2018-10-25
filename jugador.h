@@ -12,15 +12,15 @@ using std::string;
 
 class jugador {
 public:
-    jugador(string, vectorficha*, bool);
+    jugador(string, vectorficha*, jugador*, bool);
     virtual ~jugador();
     char formarPalabra(string);
 //    void colocarFicha(int, int, ficha*);
-//    void nuevasFichas();
+    void nuevasFichas();
     void fichasInicio();
     void cambiarFichas(int);
     void pasarTurno();
-//    void cambiarComodin(char);
+    void cambiarComodin(int, string);
     
 private:
     string nombre;
