@@ -14,8 +14,8 @@ class jugador {
 public:
     jugador(string, vectorficha*, jugador*, bool);
     virtual ~jugador();
-    char formarPalabra(string);
-//    void colocarFicha(int, int, ficha*);
+    string formarPalabra(string);
+    void colocarFicha(int, int, ficha*);
     void nuevasFichas();
     void fichasInicio();
     void cambiarFichas(int);

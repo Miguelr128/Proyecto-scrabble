@@ -9,7 +9,7 @@ public:
     virtual ~diccionario();
     void agregar(string);
     string toString();
-    bool validarPalabra();
+    bool validarPalabra(string);
 private:
     string* palabras;
     int cantidad;

@@ -15,14 +15,15 @@ string diccionario::toString(){
     return s.str();
 }
 
-bool diccionario::validarPalabra() {
-    char comparando[7] = palabra->formarPalabra(string ficha);
+bool diccionario::validarPalabra(string comparando) {
+    char letrasComparando [7];
     char letrasDiccionario [20];
     string palabra;
+    strcpy(letrasComparando, comparando.c_str());
     for (int i = 0; i < 1000; i++) {
         palabra = palabras[i];
         strcpy(letrasDiccionario, palabra.c_str());
-        if (strcmp(letrasDiccionario, comparando) == 0)
+        if (strcmp(letrasDiccionario, letrasComparando) == 0)
             return true;
     }
     return false;
