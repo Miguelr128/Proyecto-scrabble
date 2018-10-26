@@ -6,17 +6,19 @@
 
 class sistema {
 public:
-    sistema();
+    sistema(jugador*, tablero*);
     virtual ~sistema();
+    bool getFinalizar();
 //    string toString;
-//    int sumarPuntos(jugador*);
+    void sumarPuntos(jugador*, int, int);
 //    int puntosScrabble(jugador*);
-//    void finalizarJuego();
-//    string ganador();
+    void finalizarJuego();
+    string ganador();
 private:
-//    jugador* primerJugador;
-//    tablero* ptrTablero;
+    jugador* primerJugador;
+    tablero* ptrTablero;
 //    int puntajeTotal;
 //    int puntajeTurno;
+    bool finalizar;
 };
 #endif /* SISTEMA_H */

@@ -12,8 +12,10 @@ using std::string;
 
 class jugador {
 public:
-    jugador(string, vectorficha*, jugador*, bool);
+    jugador(string, vectorficha*, jugador*, tablero*, bool);
     virtual ~jugador();
+    int getPuntaje();
+    jugador* getOtroJugador();
     string formarPalabra(string);
     void colocarFicha(int, int, ficha*);
     void nuevasFichas();
@@ -21,6 +23,7 @@ public:
     void cambiarFichas(int);
     void pasarTurno();
     void cambiarComodin(int, string);
+    void puntosPorPalabra(int, int);
     
 private:
     string nombre;

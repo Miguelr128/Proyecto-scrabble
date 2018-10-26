@@ -10,8 +10,12 @@ class casilla {
 public:
     casilla(char);
     char getColor();
+    ficha* getFicha();
+    int getPuntos();
     void setColor(char);
     void setFicha(ficha*);
+    void duplicarValorFicha();
+    void duplicarValorPalabra();
     string toString();
     virtual ~casilla();
 private:

@@ -21,10 +21,13 @@ string ficha::getLetra(){
     return letra;
 }
 
+int ficha::getValorLetra(){
+    return valorLetra;
+}
+
 string ficha::toString(){
     stringstream s;
     s<<"letra: "<<letra<<endl;
-    s<<"valor: "<<valorLetra<<endl;
     return s.str();
 }
 

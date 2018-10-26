@@ -12,6 +12,7 @@ public:
     void setValorLetra(int);
     void setLetraComodin(bool);
     string getLetra();
+    int getValorLetra();
     string toString();
     virtual ~ficha();
 private:

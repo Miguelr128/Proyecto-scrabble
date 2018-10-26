@@ -58,6 +58,41 @@ void tablero::reservarPosicion(int i, int j, ficha* f){
     casillas[i][j]->setFicha(f);
 }
 
+int tablero::contarPuntos(int i, int j){
+    int fila = i, columna = j;
+    int puntaje = casillas[fila][columna]->getPuntos();
+    if(casillas[fila -1][columna]->getFicha() != NULL){
+        while(casillas[fila - 1][columna]->getFicha() != NULL){
+            puntaje = puntaje + casillas[fila - 1][columna]->getPuntos();
+            fila--;
+        }
+        fila = i;
+    }
+    if(casillas[fila +1][columna]->getFicha() != NULL){
+        while(casillas[fila + 1][columna]->getFicha() != NULL){
+            puntaje = puntaje + casillas[fila + 1][columna]->getPuntos();
+            fila++;
+        }
+        fila = i;
+    }
+    else{
+        if(casillas[fila][columna - 1]->getFicha() != NULL){
+            while(casillas[fila][columna - 1]->getFicha() != NULL){
+                puntaje = puntaje + casillas[fila][columna - 1]->getPuntos();
+                columna--;
+            }
+        columna = j;
+        }
+        if(casillas[fila][columna + 1]->getFicha() != NULL){
+           while(casillas[fila][columna + 1]->getFicha() != NULL){
+                puntaje = puntaje + casillas[fila][columna + 1]->getPuntos();
+                columna++;
+            } 
+        }
+    }
+    return puntaje;
+}
+
 string tablero::toString() const {
     stringstream s;
     s << "";

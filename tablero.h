@@ -10,6 +10,7 @@ class tablero {
 public:
     tablero(int, int);
     void reservarPosicion(int, int, ficha*);
+    int contarPuntos(int, int);
     string toString() const;
     void rosado();
     void amarillo();

@@ -1,7 +1,15 @@
 #include "jugador.h"
 
-jugador::jugador(string nombre, vectorficha* fi, jugador* j2, bool t) : nombre(nombre), puntos(0), turno(t)
-, otroJugador(j2), ptrMatrizFichas(new vectorfichajugador(7, fi)) {
+jugador::jugador(string nombre, vectorficha* fi, jugador* j2,tablero* tab, bool t) : nombre(nombre), puntos(0), turno(t)
+, otroJugador(j2), juego(tab), ptrMatrizFichas(new vectorfichajugador(7, fi)) {
+}
+
+int jugador::getPuntaje(){
+    return puntos;
+}
+
+jugador* jugador::getOtroJugador(){
+    return otroJugador;
 }
 
 void jugador::fichasInicio() {
@@ -32,6 +40,10 @@ void jugador::cambiarComodin(int i, string l) {
 
 void jugador::colocarFicha(int fi, int co, ficha* ficha) {
     juego->reservarPosicion(fi, co, ficha);
+}
+
+void jugador::puntosPorPalabra(int i, int j){
+    puntos = puntos + juego->contarPuntos(i, j);
 }
 
 jugador::~jugador() {
