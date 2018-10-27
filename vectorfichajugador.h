@@ -15,6 +15,9 @@ public:
     void nuevasFichas();
     void cambiar(int);
     void cambiarComodin(int, string);
+    ficha* buscarFicha(int);
+    string toString();
+    void eliminar(int);
 private:
     int tamano;
     int cantidad;

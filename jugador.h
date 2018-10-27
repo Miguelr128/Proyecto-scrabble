@@ -16,6 +16,9 @@ public:
     virtual ~jugador();
     int getPuntaje();
     jugador* getOtroJugador();
+    string getNombre();
+    bool getTurno();
+    ficha* getFicha(int);
     string formarPalabra(string);
     void colocarFicha(int, int, ficha*);
     void nuevasFichas();
@@ -24,12 +27,13 @@ public:
     void pasarTurno();
     void cambiarComodin(int, string);
     void puntosPorPalabra(int, int);
+    string toString();
     
 private:
     string nombre;
     bool turno;
     tablero* juego;
-    vectorfichajugador* ptrMatrizFichas;
+    vectorfichajugador* ptrVectorFichas;
     jugador* otroJugador;
     int puntos;
 };

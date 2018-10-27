@@ -35,7 +35,7 @@ int main() {
     archivo_guardar.open("datos.txt", ios::out);
     vectorficha* fichasSistema = new vectorficha();
     diccionario* palabrasDiccionario = new diccionario(1000);
-
+    
     while (archivo_fic.good()) {
         getline(archivo_fic, linea_fic);
         stringstream x(linea_fic);
@@ -70,6 +70,8 @@ int main() {
         cout << "[1] Continuar partida.\n";
         cout << "[2] Nueva partida.\n";
         cout << "[3] Finalizar programa.\n";
+        cout << endl;
+        cout<<"opcion: ";
         cin>>opcion;
         switch (opcion) {
             case 1: {
@@ -83,12 +85,14 @@ int main() {
                 tablero* tab = new tablero(13, 13);
                 vectorfichajugador* vfj = new vectorfichajugador (7, fichasSistema);
                 cout << "Digite el nombre del primer Jugador" << endl;
+                cout<<"Nombre: ";
                 cin >> nombreJug1;
                 cout << "Digite el nombre del segundo Jugador" << endl;
+                cout<<"Nombre: ";
                 cin >> nombreJug2;
                 jugador* jug2 = new jugador (nombreJug2, fichasSistema, NULL, tab, false);
                 jugador* jug1 = new jugador (nombreJug1, fichasSistema, jug2, tab, true);
-                sistema* sis = new sistema (jug1, tab);
+                sistema* sis = new sistema (jug1, tab, palabrasDiccionario);
                 system("cmd /c pause");
                 break;
                 delete tab;

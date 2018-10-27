@@ -44,3 +44,19 @@ void vectorfichajugador::nuevasFichas(){
 void vectorfichajugador::cambiarComodin(int i, string l){
     vector[i]->setLetra(l);
 }
+
+ficha* vectorfichajugador::buscarFicha(int i){
+    return vector[i];
+}
+
+string vectorfichajugador::toString(){
+    stringstream s;
+    for(int i = 0; i < cantidad; i++){
+        s<<vector[i]<<" | ";
+    }
+    return s.str();
+}
+
+void vectorfichajugador::eliminar(int i){
+    vector[i] = NULL;
+}

@@ -1,7 +1,7 @@
 #include "jugador.h"
 
 jugador::jugador(string nombre, vectorficha* fi, jugador* j2,tablero* tab, bool t) : nombre(nombre), puntos(0), turno(t)
-, otroJugador(j2), juego(tab), ptrMatrizFichas(new vectorfichajugador(7, fi)) {
+, otroJugador(j2), juego(tab), ptrVectorFichas(new vectorfichajugador(7, fi)) {
 }
 
 int jugador::getPuntaje(){
@@ -12,12 +12,24 @@ jugador* jugador::getOtroJugador(){
     return otroJugador;
 }
 
+ficha* jugador::getFicha(int i){
+    return ptrVectorFichas->buscarFicha(i);
+}
+
+string jugador::getNombre(){
+    return nombre;
+}
+
+bool jugador::getTurno(){
+    return turno;
+}
+
 void jugador::fichasInicio() {
-    ptrMatrizFichas->primerasFichas();
+    ptrVectorFichas->primerasFichas();
 }
 
 void jugador::cambiarFichas(int i) {
-    ptrMatrizFichas->cambiar(i);
+    ptrVectorFichas->cambiar(i);
 }
 
 void jugador::pasarTurno() {
@@ -31,11 +43,11 @@ string jugador::formarPalabra(string ficha) {
 }
 
 void jugador::nuevasFichas() {
-    ptrMatrizFichas->nuevasFichas();
+    ptrVectorFichas->nuevasFichas();
 }
 
 void jugador::cambiarComodin(int i, string l) {
-    ptrMatrizFichas->cambiarComodin(i, l);
+    ptrVectorFichas->cambiarComodin(i, l);
 }
 
 void jugador::colocarFicha(int fi, int co, ficha* ficha) {
@@ -44,6 +56,10 @@ void jugador::colocarFicha(int fi, int co, ficha* ficha) {
 
 void jugador::puntosPorPalabra(int i, int j){
     puntos = puntos + juego->contarPuntos(i, j);
+}
+
+string jugador::toString(){
+    ptrVectorFichas->toString();
 }
 
 jugador::~jugador() {
