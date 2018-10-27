@@ -95,6 +95,8 @@ void sistema::iniciarJuego(){
     int fila, columna, opcion, contador;
     char terminar;
     jugador* jugador2 = primerJugador->getOtroJugador();
+    primerJugador->fichasInicio();
+    jugador2->fichasInicio();
     while(finalizar != true){
         contador = 0;
         cout<<ptrTablero->toString()<<endl<<endl;

@@ -27,7 +27,7 @@ int ficha::getValorLetra(){
 
 string ficha::toString(){
     stringstream s;
-    s<<"letra: "<<letra<<endl;
+    s<<letra;
     return s.str();
 }
 

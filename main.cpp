@@ -65,6 +65,8 @@ int main() {
         cout << endl;
         cout << endl;
         cout << endl;
+//        vectorfichajugador* v1 = new vectorfichajugador(7, fichasSistema);
+//        cout<<v1->toString()<<endl;
         cout << "Digite la opcion que desea:\n";
         cout << endl;
         cout << "[1] Continuar partida.\n";
@@ -82,8 +84,7 @@ int main() {
             }
             case 2: {
                 system("cmd /c cls");
-                tablero* tab = new tablero(13, 13);
-                vectorfichajugador* vfj = new vectorfichajugador (7, fichasSistema);
+                tablero* tab = new tablero(8, 13);
                 cout << "Digite el nombre del primer Jugador" << endl;
                 cout<<"Nombre: ";
                 cin >> nombreJug1;
@@ -93,10 +94,10 @@ int main() {
                 jugador* jug2 = new jugador (nombreJug2, fichasSistema, NULL, tab, false);
                 jugador* jug1 = new jugador (nombreJug1, fichasSistema, jug2, tab, true);
                 sistema* sis = new sistema (jug1, tab, palabrasDiccionario);
+                sis->iniciarJuego();
                 system("cmd /c pause");
                 break;
                 delete tab;
-                delete vfj;
                 delete jug1;
                 delete jug2;
                 delete sis;

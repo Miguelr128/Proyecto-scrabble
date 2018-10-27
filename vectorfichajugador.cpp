@@ -1,19 +1,17 @@
 #include "vectorfichajugador.h"
 
 vectorfichajugador::vectorfichajugador(int x, vectorficha* fi) :tamano(x), cantidad (x), fichasSistema(fi), vector(new ficha*[x]) {
-    for(int i = 0; i < tamano; i++){
-        vector[i] = NULL;
-    }
+    primerasFichas();
 }
 
 vectorfichajugador::~vectorfichajugador() {
 }
 
 void vectorfichajugador::primerasFichas() {
-    int numero, rango = fichasSistema->getCantidad();
-    srand (time (NULL));
-    for (int i = 0; i < tamano; i++) {
+    int numero, rango = fichasSistema->getCantidad(); 
+    for (int i = 0; i < cantidad; i++) {
         numero = rand() % rango;
+//        srand (time (NULL));
         vector[i] = fichasSistema->getFicha(numero);
         fichasSistema->eliminarFicha(numero);
         rango = rango -1;
@@ -52,7 +50,7 @@ ficha* vectorfichajugador::buscarFicha(int i){
 string vectorfichajugador::toString(){
     stringstream s;
     for(int i = 0; i < cantidad; i++){
-        s<<vector[i]<<" | ";
+        s<<vector[i]->toString()<<" | ";
     }
     return s.str();
 }

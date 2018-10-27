@@ -59,7 +59,9 @@ void jugador::puntosPorPalabra(int i, int j){
 }
 
 string jugador::toString(){
-    ptrVectorFichas->toString();
+    stringstream s;
+    s<<ptrVectorFichas->toString();
+    return s.str();
 }
 
 jugador::~jugador() {
