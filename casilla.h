@@ -15,7 +15,6 @@ public:
     void setColor(char);
     void setFicha(ficha*);
     void duplicarValorFicha();
-    void duplicarValorPalabra();
     string toString();
     virtual ~casilla();
 private:

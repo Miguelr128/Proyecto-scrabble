@@ -48,8 +48,5 @@ void casilla::duplicarValorFicha(){
         }
 }
 
-void casilla::duplicarValorPalabra(){    
-}
-
 casilla::~casilla() {
 }

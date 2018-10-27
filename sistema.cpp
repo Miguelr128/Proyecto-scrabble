@@ -30,5 +30,11 @@ void sistema::sumarPuntos(jugador* j, int f, int c){
     j->puntosPorPalabra(f, c);
 }
 
+bool sistema::puntosScrabble(string palabra) {
+    if (palabra.length() == 7)
+        return true;
+    return false;
+}
+
 sistema::~sistema() {
 }

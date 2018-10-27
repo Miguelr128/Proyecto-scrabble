@@ -51,6 +51,69 @@ void tablero::verde(){
     casillas[7][12]->setColor('V');
 }
 
+void tablero::duplicarValorPalabra() {
+    int duplicado;
+    int suma = 0;
+    for (int i = 0; i < filas; i++)
+        for (int e = 0; e < columnas; e++)
+            if ((casillas[i][e] != NULL) && (casillas[i][e+1] != NULL) && (casillas[i][e] -> getColor() == 'B'))
+                for (int x = 0; x < columnas; x++) {
+                    while (casillas [i][e + x] != NULL) {
+                    suma = suma + casillas [i][e + x] -> getFicha() -> getValorLetra();
+                    duplicado = suma * 3;
+                    }
+                }
+            else if ((casillas[i][e] != NULL) && (casillas[i][e - 1] != NULL) && (casillas[i][e] -> getColor() == 'B'))
+                for (int x = e; x > 0; x--) {
+                    while (casillas [i][e - (e - x)] != NULL) {
+                        suma = suma + casillas [i][e - (e- x)] -> getFicha() -> getValorLetra();
+                        duplicado = suma * 3;
+                    }
+                }
+            else if ((casillas[i][e] != NULL) && (casillas[i+1][e] != NULL) && (casillas[i][e] -> getColor() == 'B'))
+                for (int x = 0; x < filas; x++) {
+                    while (casillas [i + x][e] != NULL) {
+                        suma = suma + casillas [i + x][e] -> getFicha() -> getValorLetra();
+                        duplicado = suma * 3;
+                    }
+                }
+            else if ((casillas[i][e] != NULL) && (casillas[i - 1][e] != NULL) && (casillas[i][e] -> getColor() == 'B'))
+                for (int x = 0; x < filas; x++) {
+                    while (casillas [i - (i - x)][e] != NULL) {
+                        suma = suma + casillas [i - (i - x)][e] -> getFicha() -> getValorLetra();
+                        duplicado = suma * 3;
+                    }
+                }
+            else if ((casillas[i][e] != NULL) && (casillas[i][e+1] != NULL) && (casillas[i][e] -> getColor() == 'V'))
+                for (int x = 0; x < columnas; x++) {
+                    while (casillas [i][e + x] != NULL) {
+                    suma = suma + casillas [i][e + x] -> getFicha() -> getValorLetra();
+                    duplicado = suma * 2;
+                    }
+                }
+            else if ((casillas[i][e] != NULL) && (casillas[i][e - 1] != NULL) && (casillas[i][e] -> getColor() == 'V'))
+                for (int x = e; x > 0; x--) {
+                    while (casillas [i][e - (e - x)] != NULL) {
+                        suma = suma + casillas [i][e - (e- x)] -> getFicha() -> getValorLetra();
+                        duplicado = suma * 2;
+                    }
+                }
+            else if ((casillas[i][e] != NULL) && (casillas[i+1][e] != NULL) && (casillas[i][e] -> getColor() == 'V'))
+                for (int x = 0; x < filas; x++) {
+                    while (casillas [i + x][e] != NULL) {
+                        suma = suma + casillas [i + x][e] -> getFicha() -> getValorLetra();
+                        duplicado = suma * 2;
+                    }
+                }
+            else if ((casillas[i][e] != NULL) && (casillas[i - 1][e] != NULL) && (casillas[i][e] -> getColor() == 'V'))
+                for (int x = 0; x < filas; x++) {
+                    while (casillas [i - (i - x)][e] != NULL) {
+                        suma = suma + casillas [i - (i - x)][e] -> getFicha() -> getValorLetra();
+                        duplicado = suma * 2;
+                    }
+                }
+}
+
 tablero::~tablero() {
 }
 

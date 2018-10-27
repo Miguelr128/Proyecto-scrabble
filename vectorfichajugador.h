@@ -2,6 +2,7 @@
 #define VECTORFICHAJUGADOR_H
 
 #include <cstdlib>
+#include <time.h>
 
 #include "ficha.h"
 #include "vectorficha.h"

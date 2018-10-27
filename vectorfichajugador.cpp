@@ -11,6 +11,7 @@ vectorfichajugador::~vectorfichajugador() {
 
 void vectorfichajugador::primerasFichas() {
     int numero, rango = fichasSistema->getCantidad();
+    srand (time (NULL));
     for (int i = 0; i < tamano; i++) {
         numero = rand() % rango;
         vector[i] = fichasSistema->getFicha(numero);

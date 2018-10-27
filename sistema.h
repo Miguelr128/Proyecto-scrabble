@@ -9,9 +9,9 @@ public:
     sistema(jugador*, tablero*);
     virtual ~sistema();
     bool getFinalizar();
-//    string toString;
+//    string toString();
     void sumarPuntos(jugador*, int, int);
-//    int puntosScrabble(jugador*);
+    bool puntosScrabble(string);
     void finalizarJuego();
     string ganador();
 private:

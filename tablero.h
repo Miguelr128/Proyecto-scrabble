@@ -16,9 +16,8 @@ public:
     void amarillo();
     void verde();
     void azul();
+    void duplicarValorPalabra();
     virtual ~tablero();
-//    void premiarPalabra(jugador*);
-//    void premiarLetra(char);
 private:
     int filas;
     int columnas;
