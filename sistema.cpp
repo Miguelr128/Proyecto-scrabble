@@ -48,7 +48,7 @@ bool sistema::validarPalabraVFJ(string ficha, int posicion) {
 }
 
 void sistema::turno(int p, jugador* j) {
-    string fich, palabraFormada;
+    string fich, palabra, palabraFormada;
     bool terminar = false;
     int fila, columna, i, lon, contador = 1, posicion;
     ficha* fi;
@@ -57,16 +57,19 @@ void sistema::turno(int p, jugador* j) {
         {
             while (terminar != true) {
                 int opcion = 2;
+                cout<<"Digite la palabra que desea formar: ";
+                cin>>palabra;
+                cout<<endl;
                 cout << "Digite la cantidad de letras que posee la palabra que va a formar" << endl;
                 cin >> lon;
                 int pos,e = 0;
-                string vecFic[lon];
+                int vecFic[lon];
                 while(opcion != 1){
                     cout << " Digite la ficha y la posicion en la que se encuentra la ficha respectivamente para formar la palabra" <<endl;
                     cin>>fich;
                     cin>>posicion;
                     if (validarPalabraVFJ(fich, posicion) == true) {
-                        vecFic[e] = fich;
+                        vecFic[e] = posicion;
                         e++;
                     }
                     else if (validarPalabraVFJ(fich, posicion) == false){
@@ -78,24 +81,20 @@ void sistema::turno(int p, jugador* j) {
                     cout << "[2] No" << endl;
                     cin>>opcion;
                 }
-                palabraFormada = j->formarPalabra(vecFic, lon);
-                cout<<palabraFormada<<endl;
-                if (dic->validarPalabra(palabraFormada) == true) {
-                    while (contador <= lon) {
-                        for (int i = 0; i < lon; i++) {
-                            pos = primerJugador->getPtrVectorFichas()->buscarPosicionFicha(vecFic[i]);
-                            fi = j->getFicha(pos);
-                            cout << endl;
-                            cout << "Digite la posicion en la que desea colocar las fichas en el orden que foman la palabra" << endl;
-                            cout << "fila: ";
-                            cin>>fila;
-                            cout << endl;
-                            cout << "columna: ";
-                            cin>>columna;
-                            cout << endl;
-                            ptrTablero->reservarPosicion(fila, columna, fi);
-                            cout << ptrTablero->toString() << endl;
-                        }
+                if (dic->validarPalabra(palabra) == true) {
+                    for (int i = 0; i < lon; i++) {
+                        pos = vecFic[i];
+                        fi = j->getFicha(pos);
+                        cout << endl;
+                        cout << "Digite la posicion en la que desea colocar las fichas en el orden que foman la palabra" << endl;
+                        cout << "fila: ";
+                        cin>>fila;
+                        cout << endl;
+                        cout << "columna: ";
+                        cin>>columna;
+                        cout << endl;
+                        ptrTablero->reservarPosicion(fila, columna, fi);
+                        cout << ptrTablero->toString() << endl;
                     }
                     j->pasarTurno();
                     terminar = true;

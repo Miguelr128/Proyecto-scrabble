@@ -55,7 +55,11 @@ ficha* vectorfichajugador::buscarFicha(int i){
 
 string vectorfichajugador::toString(){
     stringstream s;
+    s<<"| ";
     for(int i = 0; i < cantidad; i++){
+        if(vector[i]==NULL){
+            s<<" - |";
+        }
         s<<vector[i]->toString()<<" | ";
     }
     return s.str();
