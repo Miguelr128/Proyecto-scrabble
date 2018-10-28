@@ -40,9 +40,11 @@ vectorfichajugador* jugador::getPtrVectorFichas() {
     return ptrVectorFichas;
 }
 
-string jugador::formarPalabra(string ficha) {
-    string palabra = NULL;
-    palabra = palabra + ficha;
+string jugador::formarPalabra(string ficha[], int j) {
+    string palabra;
+    for(int i = 0; i < j; i++){
+    palabra = palabra + ficha[i];
+    }
     return palabra;
 }
 

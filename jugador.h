@@ -19,7 +19,7 @@ public:
     string getNombre();
     bool getTurno();
     ficha* getFicha(int);
-    string formarPalabra(string);
+    string formarPalabra(string[], int);
     void colocarFicha(int, int, ficha*);
     void nuevasFichas();
     void fichasInicio();

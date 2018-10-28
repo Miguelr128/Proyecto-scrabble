@@ -1,6 +1,8 @@
 #include<iostream>
 #include "sistema.h"
 
+using namespace std;
+
 sistema::sistema(jugador* j, tablero* t, diccionario* d):primerJugador(j), ptrTablero(t), dic(d), finalizar(false) {
 }
 
@@ -54,27 +56,30 @@ void sistema::turno(int p, jugador* j) {
         case 1:
         {
             while (terminar != true) {
-                int opcion;
+                int opcion = 2;
                 cout << "Digite la cantidad de letras que posee la palabra que va a formar" << endl;
                 cin >> lon;
-                int pos;
+                int pos,e = 0;
                 string vecFic[lon];
-                do {
-                    cout << "Termino de formar la palabra?" <<endl;
-                    cout << "[1] Sí" << endl;
-                    cout << "[2] No" << endl;
-                    cin>>opcion;
+                while(opcion != 1){
                     cout << " Digite la ficha y la posicion en la que se encuentra la ficha respectivamente para formar la palabra" <<endl;
                     cin>>fich;
                     cin>>posicion;
                     if (validarPalabraVFJ(fich, posicion) == true) {
-                        for (int e = 0; e < lon; e++)
-                            vecFic[e] = fich;
-                        palabraFormada = primerJugador->formarPalabra(fich);
+                        vecFic[e] = fich;
+                        e++;
                     }
-                    else if (validarPalabraVFJ(fich, posicion) == false)
+                    else if (validarPalabraVFJ(fich, posicion) == false){
                         cout << "La ficha no se encuentra" << endl;
-                } while (opcion == 2);
+                    }
+                    
+                    cout << "Termino de formar la palabra?" <<endl;
+                    cout << "[1] Sí" << endl;
+                    cout << "[2] No" << endl;
+                    cin>>opcion;
+                }
+                palabraFormada = j->formarPalabra(vecFic, lon);
+                cout<<palabraFormada<<endl;
                 if (dic->validarPalabra(palabraFormada) == true) {
                     while (contador <= lon) {
                         for (int i = 0; i < lon; i++) {
