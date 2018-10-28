@@ -28,7 +28,7 @@ public:
     void cambiarComodin(int, string);
     void puntosPorPalabra(int, int);
     string toString();
-    
+    vectorfichajugador* getPtrVectorFichas();
 private:
     string nombre;
     bool turno;

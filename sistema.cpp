@@ -37,46 +37,69 @@ bool sistema::puntosScrabble(string palabra) {
     return false;
 }
 
-void sistema::turno(int p, jugador* j){
-    string palabra;
+bool sistema::validarPalabraVFJ(string ficha, int posicion) {
+    if (primerJugador ->getPtrVectorFichas()->buscarFicha(posicion)->getLetra() == ficha) {
+        primerJugador ->getPtrVectorFichas()->eliminar(posicion);
+        return true;
+    }
+    return false;
+}
+
+void sistema::turno(int p, jugador* j) {
+    string fich, palabraFormada;
     bool terminar = false;
-    int fila, columna, i, lon, contador = 1;
+    int fila, columna, i, lon, contador = 1, posicion;
     ficha* fi;
-    switch(p){
+    switch (p) {
         case 1:
-            while(terminar != true){
-                cout<<" Digite la palabra que desea colocar (todo en minusculas): ";
-                cin>>palabra;
-                cout<<endl;
-                cout<<"Longitud de la palabra: ";
-                cin>>lon;
-                cout<<endl;
-                // Espacio donde se guarda la palabra en un archivo y se busca en el diccionario//
-                if(dic->validarPalabra(palabra) == true){
-                    cout<<"A continuacion digite coloque las letras en forma ordenada"<<endl;
-                    while(contador <= lon){
-                        cout<<"Digite la posicion de la letra que desea colocar: ";
-                        cin>>i;
-                        fi = j->getFicha(i);
-                        cout<<endl;
-                        cout<<"Ahora digite la posicion en la desea colocar en el tablero"<<endl;
-                        cout<<"fila: ";
-                        cin>>fila;
-                        cout<<endl;
-                        cout<<"columna: ";
-                        cin>>columna;
-                        cout<<endl;
-                        ptrTablero->reservarPosicion(fila, columna, fi);
-                        cout<<ptrTablero->toString()<<endl;
+        {
+            while (terminar != true) {
+                int opcion;
+                cout << "Digite la cantidad de letras que posee la palabra que va a formar" << endl;
+                cin >> lon;
+                int pos;
+                string vecFic[lon];
+                do {
+                    cout << "Termino de formar la palabra?" <<endl;
+                    cout << "[1] Sí" << endl;
+                    cout << "[2] No" << endl;
+                    cin>>opcion;
+                    cout << " Digite la ficha y la posicion en la que se encuentra la ficha respectivamente para formar la palabra" <<endl;
+                    cin>>fich;
+                    cin>>posicion;
+                    if (validarPalabraVFJ(fich, posicion) == true) {
+                        for (int e = 0; e < lon; e++)
+                            vecFic[e] = fich;
+                        palabraFormada = primerJugador->formarPalabra(fich);
+                    }
+                    else if (validarPalabraVFJ(fich, posicion) == false)
+                        cout << "La ficha no se encuentra" << endl;
+                } while (opcion == 2);
+                if (dic->validarPalabra(palabraFormada) == true) {
+                    while (contador <= lon) {
+                        for (int i = 0; i < lon; i++) {
+                            pos = primerJugador->getPtrVectorFichas()->buscarPosicionFicha(vecFic[i]);
+                            fi = j->getFicha(pos);
+                            cout << endl;
+                            cout << "Digite la posicion en la que desea colocar las fichas en el orden que foman la palabra" << endl;
+                            cout << "fila: ";
+                            cin>>fila;
+                            cout << endl;
+                            cout << "columna: ";
+                            cin>>columna;
+                            cout << endl;
+                            ptrTablero->reservarPosicion(fila, columna, fi);
+                            cout << ptrTablero->toString() << endl;
+                        }
                     }
                     j->pasarTurno();
                     terminar = true;
-                }
-                else
-                    cout<<"La palabra no es aceptada"<<endl;
+                } else
+                    cout << "La palabra no existe en el diccionario" << endl;
             }
             break;
-            
+        }
+
         case 2:
             j->nuevasFichas();
             break;
@@ -111,10 +134,8 @@ void sistema::iniciarJuego(){
             cin>>opcion;
             turno(opcion, primerJugador);
         }
-        if(opcion == 3){
-            contador++;
-        }
-        cout<<endl<<endl;
+    }
+        cout << endl << endl;
         cout<<"Turno de: "<<jugador2->getNombre()<<endl;
         while(jugador2->getTurno() == true){
             cout<<"fichas del jugador: "<<endl;
@@ -136,7 +157,6 @@ void sistema::iniciarJuego(){
             finalizarJuego();
             cout<<"El juego ha terminado"<<endl;
         }
-    }
 }
 
 sistema::~sistema() {

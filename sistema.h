@@ -16,6 +16,7 @@ public:
     void iniciarJuego();
     void turno(int, jugador*);
     void finalizarJuego();
+    bool validarPalabraVFJ(string, int);
     string ganador();
 private:
     jugador* primerJugador;

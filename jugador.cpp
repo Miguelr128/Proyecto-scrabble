@@ -36,6 +36,10 @@ void jugador::pasarTurno() {
     turno = false;
 }
 
+vectorfichajugador* jugador::getPtrVectorFichas() {
+    return ptrVectorFichas;
+}
+
 string jugador::formarPalabra(string ficha) {
     string palabra = NULL;
     palabra = palabra + ficha;

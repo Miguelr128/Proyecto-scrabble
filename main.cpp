@@ -65,8 +65,6 @@ int main() {
         cout << endl;
         cout << endl;
         cout << endl;
-//        vectorfichajugador* v1 = new vectorfichajugador(7, fichasSistema);
-//        cout<<v1->toString()<<endl;
         cout << "Digite la opcion que desea:\n";
         cout << endl;
         cout << "[1] Continuar partida.\n";

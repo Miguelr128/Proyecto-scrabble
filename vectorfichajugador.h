@@ -18,6 +18,7 @@ public:
     ficha* buscarFicha(int);
     string toString();
     void eliminar(int);
+    int buscarPosicionFicha(string);
 private:
     int tamano;
     int cantidad;

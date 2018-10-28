@@ -18,6 +18,12 @@ void vectorfichajugador::primerasFichas() {
     }
 }
 
+int vectorfichajugador::buscarPosicionFicha(string ficha) {
+    for (int i = 0; i < cantidad; i++)
+        if (vector[i] ->getLetra() == ficha)
+            return i;
+}
+
 void vectorfichajugador::cambiar(int i){
     int numero, rango = fichasSistema->getCantidad();
     ficha* aux;
