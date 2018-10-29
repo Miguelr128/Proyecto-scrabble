@@ -51,7 +51,7 @@ void sistema::turno(int p, jugador* j) {
     string fich, palabra, palabraFormada;
     bool terminar = false;
     int fila, columna, i, lon, contador = 1, posicion;
-    ficha* fi;
+    ficha* fit = NULL;
     switch (p) {
         case 1:
         {
@@ -84,7 +84,9 @@ void sistema::turno(int p, jugador* j) {
                 if (dic->validarPalabra(palabra) == true) {
                     for (int i = 0; i < lon; i++) {
                         pos = vecFic[i];
-                        fi = j->getFicha(pos);
+                        cout<<pos<<endl;
+                        fit = j->getFicha(pos);
+                        cout<<fit->toString()<<endl;
                         cout << endl;
                         cout << "Digite la posicion en la que desea colocar las fichas en el orden que foman la palabra" << endl;
                         cout << "fila: ";
@@ -93,7 +95,7 @@ void sistema::turno(int p, jugador* j) {
                         cout << "columna: ";
                         cin>>columna;
                         cout << endl;
-                        ptrTablero->reservarPosicion(fila, columna, fi);
+                        ptrTablero->reservarPosicion(fila, columna, fit);
                         cout << ptrTablero->toString() << endl;
                     }
                     j->pasarTurno();
@@ -137,8 +139,11 @@ void sistema::iniciarJuego(){
             cout<<"Opcion: ";
             cin>>opcion;
             turno(opcion, primerJugador);
+            jugador2->setTurno(true);
         }
-    }
+        if(opcion == 3){
+            contador = contador + 1;
+        }
         cout << endl << endl;
         cout<<"Turno de: "<<jugador2->getNombre()<<endl;
         while(jugador2->getTurno() == true){
@@ -150,17 +155,24 @@ void sistema::iniciarJuego(){
             cout<<"Opcion: ";
             cin>>opcion;
             turno(opcion, jugador2);
+            primerJugador->setTurno(true);
         }
         if(opcion == 3){
-            contador++;
+            contador = contador + 1;
+        }
+        if(contador == 2){
+            finalizarJuego();
+            cout<<"El juego ha terminado"<<endl;
+            break;
         }
         cout<<endl<<endl;
         cout<<"Finalizar juego. Si(Y), No(N): ";
         cin>>terminar;
-        if(terminar == 'Y' || contador == 2){
+        if(terminar == 'Y'){
             finalizarJuego();
             cout<<"El juego ha terminado"<<endl;
         }
+    }
 }
 
 sistema::~sistema() {

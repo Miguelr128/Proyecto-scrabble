@@ -34,7 +34,7 @@ int main() {
     archivo_fic.open("fichas.txt", ios::in);
     archivo_guardar.open("datos.txt", ios::out);
     vectorficha* fichasSistema = new vectorficha();
-    diccionario* palabrasDiccionario = new diccionario(1550);
+    diccionario* palabrasDiccionario = new diccionario(1551);
     
     while (archivo_fic.good()) {
         getline(archivo_fic, linea_fic);
@@ -57,6 +57,7 @@ int main() {
     }
     
 //    cout<<palabrasDiccionario->toString();
+    
 
     do {
         system("cmd /c color 79");
@@ -67,20 +68,13 @@ int main() {
         cout << endl;
         cout << "Digite la opcion que desea:\n";
         cout << endl;
-        cout << "[1] Continuar partida.\n";
-        cout << "[2] Nueva partida.\n";
-        cout << "[3] Finalizar programa.\n";
+        cout << "[1] Nueva partida.\n";
+        cout << "[2] Finalizar programa.\n";
         cout << endl;
         cout<<"opcion: ";
         cin>>opcion;
         switch (opcion) {
             case 1: {
-                system("cmd /c cls");
-                cout << "Hola" << endl;
-                system("cmd /c pause");
-                break;
-            }
-            case 2: {
                 system("cmd /c cls");
                 tablero* tab = new tablero(8, 13);
                 cout << "Digite el nombre del primer Jugador" << endl;
@@ -92,23 +86,27 @@ int main() {
                 jugador* jug2 = new jugador (nombreJug2, fichasSistema, NULL, tab, false);
                 jugador* jug1 = new jugador (nombreJug1, fichasSistema, jug2, tab, true);
                 sistema* sis = new sistema (jug1, tab, palabrasDiccionario);
+                ficha* fi;
+                fi = jug1->getFicha(2);
+                cout<<fi->toString();
+                
                 sis->iniciarJuego();
                 system("cmd /c pause");
+                seguirPrograma = true;
                 break;
                 delete tab;
                 delete jug1;
                 delete jug2;
                 delete sis;
             }
-            case 3: {
+            case 2: {
                 system("cmd /c cls");
-                cout << "Hola" << endl;
                 system("cmd /c pause");
                 seguirPrograma = false;
                 break;
             }
         }
-    } while (seguirPrograma);
+    } while (seguirPrograma == true);
     
     archivo_dic.close();
     archivo_fic.close();

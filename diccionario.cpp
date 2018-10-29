@@ -20,7 +20,7 @@ bool diccionario::validarPalabra(string comparando) {
     char letrasDiccionario [20];
     string palabra;
     strcpy(letrasComparando, comparando.c_str());
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < cantidad; i++) {
         palabra = palabras[i];
         strcpy(letrasDiccionario, palabra.c_str());
         if (strcmp(letrasDiccionario, letrasComparando) == 0)

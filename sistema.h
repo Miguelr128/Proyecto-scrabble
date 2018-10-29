@@ -18,6 +18,7 @@ public:
     void finalizarJuego();
     bool validarPalabraVFJ(string, int);
     string ganador();
+    void encontrarPalabraFormada();
 private:
     jugador* primerJugador;
     tablero* ptrTablero;

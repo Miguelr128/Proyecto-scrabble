@@ -24,6 +24,10 @@ bool jugador::getTurno(){
     return turno;
 }
 
+void jugador::setTurno(bool b){
+    turno = b;
+}
+
 void jugador::fichasInicio() {
     ptrVectorFichas->primerasFichas();
 }

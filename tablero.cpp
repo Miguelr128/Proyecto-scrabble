@@ -114,25 +114,29 @@ void tablero::duplicarValorPalabra() {
                 }
 }
 
+void tablero::validarPalabraSistema() {
+    
+}
+
 tablero::~tablero() {
 }
 
-void tablero::reservarPosicion(int i, int j, ficha* f){
+void tablero::reservarPosicion(int i, int j, ficha* f) {
     casillas[i][j]->setFicha(f);
 }
 
-int tablero::contarPuntos(int i, int j){
+int tablero::contarPuntos(int i, int j) {
     int fila = i, columna = j;
     int puntaje = casillas[fila][columna]->getPuntos();
-    if(casillas[fila -1][columna]->getFicha() != NULL){
-        while(casillas[fila - 1][columna]->getFicha() != NULL){
+    if (casillas[fila - 1][columna]->getFicha() != NULL) {
+        while (casillas[fila - 1][columna]->getFicha() != NULL) {
             puntaje = puntaje + casillas[fila - 1][columna]->getPuntos();
             fila--;
         }
         fila = i;
     }
-    if(casillas[fila +1][columna]->getFicha() != NULL){
-        while(casillas[fila + 1][columna]->getFicha() != NULL){
+    if (casillas[fila + 1][columna]->getFicha() != NULL) {
+        while (casillas[fila + 1][columna]->getFicha() != NULL) {
             puntaje = puntaje + casillas[fila + 1][columna]->getPuntos();
             fila++;
         }

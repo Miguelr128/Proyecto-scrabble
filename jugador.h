@@ -18,6 +18,7 @@ public:
     jugador* getOtroJugador();
     string getNombre();
     bool getTurno();
+    void setTurno(bool);
     ficha* getFicha(int);
     string formarPalabra(string[], int);
     void colocarFicha(int, int, ficha*);

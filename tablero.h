@@ -18,6 +18,7 @@ public:
     void azul();
     void duplicarValorPalabra();
     virtual ~tablero();
+    void validarPalabraSistema();
 private:
     int filas;
     int columnas;
