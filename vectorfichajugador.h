@@ -11,6 +11,7 @@ class vectorfichajugador {
 public:
     vectorfichajugador(int, vectorficha*);
     virtual ~vectorfichajugador();
+    void setFichas(int, ficha*);
     void primerasFichas();
     void nuevasFichas();
     void cambiar(int);

@@ -1,18 +1,27 @@
 #include "vectorfichajugador.h"
 
 vectorfichajugador::vectorfichajugador(int x, vectorficha* fi) :tamano(x), cantidad (x), fichasSistema(fi), vector(new ficha*[x]) {
+    for(int i = 0; i < x; i++){
+        vector[i] = NULL;
+    }
     primerasFichas();
 }
 
 vectorfichajugador::~vectorfichajugador() {
 }
 
+void vectorfichajugador::setFichas(int i, ficha* f){
+    vector[i] = f;
+}
+
 void vectorfichajugador::primerasFichas() {
-    int numero, rango = fichasSistema->getCantidad(); 
+    int numero, rango = fichasSistema->getCantidad();
+    ficha* fi;
     for (int i = 0; i < cantidad; i++) {
         numero = rand() % rango;
-//        srand (time (NULL));
-        vector[i] = fichasSistema->getFicha(numero);
+        srand (time (NULL));
+        fi = fichasSistema->getFicha(numero);
+        setFichas(i, fi);
         fichasSistema->eliminarFicha(numero);
         rango = rango -1;
     }

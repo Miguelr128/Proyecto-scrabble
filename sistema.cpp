@@ -51,11 +51,12 @@ void sistema::turno(int p, jugador* j) {
     string fich, palabra, palabraFormada;
     bool terminar = false;
     int fila, columna, i, lon, contador = 1, posicion;
-    ficha* fit = NULL;
+    jugador* j1 = j;
     switch (p) {
         case 1:
         {
             while (terminar != true) {
+                ficha* fit = NULL;
                 int opcion = 2;
                 cout<<"Digite la palabra que desea formar: ";
                 cin>>palabra;
@@ -85,7 +86,7 @@ void sistema::turno(int p, jugador* j) {
                     for (int i = 0; i < lon; i++) {
                         pos = vecFic[i];
                         cout<<pos<<endl;
-                        fit = j->getFicha(pos);
+                        fit = j1->getFicha(pos);
                         cout<<fit->toString()<<endl;
                         cout << endl;
                         cout << "Digite la posicion en la que desea colocar las fichas en el orden que foman la palabra" << endl;
@@ -98,7 +99,7 @@ void sistema::turno(int p, jugador* j) {
                         ptrTablero->reservarPosicion(fila, columna, fit);
                         cout << ptrTablero->toString() << endl;
                     }
-                    j->pasarTurno();
+                    j1->pasarTurno();
                     terminar = true;
                 } else
                     cout << "La palabra no existe en el diccionario" << endl;
@@ -124,8 +125,6 @@ void sistema::iniciarJuego(){
     int fila, columna, opcion, contador;
     char terminar;
     jugador* jugador2 = primerJugador->getOtroJugador();
-    primerJugador->fichasInicio();
-    jugador2->fichasInicio();
     while(finalizar != true){
         contador = 0;
         cout<<ptrTablero->toString()<<endl<<endl;

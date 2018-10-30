@@ -57,6 +57,7 @@ int main() {
     }
     
 //    cout<<palabrasDiccionario->toString();
+//    cout<<fichasSistema->toString();
     
 
     do {
@@ -86,18 +87,15 @@ int main() {
                 jugador* jug2 = new jugador (nombreJug2, fichasSistema, NULL, tab, false);
                 jugador* jug1 = new jugador (nombreJug1, fichasSistema, jug2, tab, true);
                 sistema* sis = new sistema (jug1, tab, palabrasDiccionario);
-                ficha* fi;
-                fi = jug1->getFicha(2);
-                cout<<fi->toString();
                 
                 sis->iniciarJuego();
                 system("cmd /c pause");
-                seguirPrograma = true;
-                break;
+                seguirPrograma = false;
                 delete tab;
                 delete jug1;
                 delete jug2;
                 delete sis;
+                break;
             }
             case 2: {
                 system("cmd /c cls");
