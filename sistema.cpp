@@ -39,9 +39,9 @@ bool sistema::puntosScrabble(string palabra) {
     return false;
 }
 
-bool sistema::validarPalabraVFJ(string ficha, int posicion) {
-    if (primerJugador ->getPtrVectorFichas()->buscarFicha(posicion)->getLetra() == ficha) {
-        primerJugador ->getPtrVectorFichas()->eliminar(posicion);
+bool sistema::validarPalabraVFJ(string ficha, int posicion, jugador* j) {
+    if (j->getPtrVectorFichas()->buscarFicha(posicion)->getLetra() == ficha) {
+        j->getPtrVectorFichas()->eliminar(posicion);
         return true;
     }
     return false;
@@ -69,11 +69,11 @@ void sistema::turno(int p, jugador* j) {
                     cout << " Digite la ficha y la posicion en la que se encuentra la ficha respectivamente para formar la palabra" <<endl;
                     cin>>fich;
                     cin>>posicion;
-                    if (validarPalabraVFJ(fich, posicion) == true) {
+                    if (validarPalabraVFJ(fich, posicion, j1) == true) {
                         vecFic[e] = posicion;
                         e++;
                     }
-                    else if (validarPalabraVFJ(fich, posicion) == false){
+                    else if (validarPalabraVFJ(fich, posicion, j1) == false){
                         cout << "La ficha no se encuentra" << endl;
                     }
                     
@@ -87,7 +87,6 @@ void sistema::turno(int p, jugador* j) {
                         pos = vecFic[i];
                         cout<<pos<<endl;
                         fit = j1->getFicha(pos);
-                        cout<<fit->toString()<<endl;
                         cout << endl;
                         cout << "Digite la posicion en la que desea colocar las fichas en el orden que foman la palabra" << endl;
                         cout << "fila: ";
@@ -99,6 +98,8 @@ void sistema::turno(int p, jugador* j) {
                         ptrTablero->reservarPosicion(fila, columna, fit);
                         cout << ptrTablero->toString() << endl;
                     }
+                    j1->puntosPorPalabra(fila, columna);
+                    cout<<"Puntos acumulados: "<<j1->getPuntos()<<endl<<endl;
                     j1->pasarTurno();
                     terminar = true;
                 } else

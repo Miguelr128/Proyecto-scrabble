@@ -16,6 +16,10 @@ ficha* jugador::getFicha(int i){
     return ptrVectorFichas->buscarFicha(i);
 }
 
+int jugador::getPuntos(){
+    return puntos;
+}
+
 string jugador::getNombre(){
     return nombre;
 }
