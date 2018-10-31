@@ -15,6 +15,7 @@ public:
     bool puntosScrabble(string);
     void iniciarJuego();
     void turno(int, jugador*);
+    bool palabrasIguales(string, string);
     void finalizarJuego();
     bool validarPalabraVFJ(string, int, jugador*);
     string ganador();

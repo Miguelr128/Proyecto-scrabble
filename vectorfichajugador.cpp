@@ -37,6 +37,7 @@ void vectorfichajugador::cambiar(int i){
     int numero, rango = fichasSistema->getCantidad();
     ficha* aux;
     numero = rand() % rango;
+    srand (time (NULL));
     aux = vector[i];
     vector[i] = fichasSistema->getFicha(numero);
     fichasSistema->setFicha(numero, aux);
@@ -47,6 +48,7 @@ void vectorfichajugador::nuevasFichas(){
     for (int i = 0; i < tamano; i++) {
         if(vector[i] == NULL){
             numero = rand() % rango;
+            srand (time (NULL));
             vector[i] = fichasSistema->getFicha(numero);
             fichasSistema->eliminarFicha(numero);
             rango = rango -1;

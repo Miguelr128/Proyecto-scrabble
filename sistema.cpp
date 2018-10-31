@@ -41,7 +41,18 @@ bool sistema::puntosScrabble(string palabra) {
 
 bool sistema::validarPalabraVFJ(string ficha, int posicion, jugador* j) {
     if (j->getPtrVectorFichas()->buscarFicha(posicion)->getLetra() == ficha) {
-        j->getPtrVectorFichas()->eliminar(posicion);
+        return true;
+    }
+    return false;
+}
+
+bool sistema::palabrasIguales(string palabra1, string palabra2){
+    char letrasRecibidas [7];
+    char letrasPalabra [20];
+
+    strcpy(letrasRecibidas, palabra1.c_str());
+    strcpy(letrasPalabra, palabra2.c_str());
+    if (strcmp(letrasPalabra, letrasRecibidas) == 0){
         return true;
     }
     return false;
