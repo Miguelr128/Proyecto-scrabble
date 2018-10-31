@@ -8,7 +8,7 @@ using namespace std;
 
 class tablero {
 public:
-    tablero(int, int);
+    tablero();
     void reservarPosicion(int, int, ficha*);
     int contarPuntos(int, int);
     string toString() const;
@@ -17,8 +17,8 @@ public:
     void verde();
     void azul();
     void duplicarValorPalabra();
+    casilla*** getCasillas();
     virtual ~tablero();
-    void validarPalabraSistema();
 private:
     int filas;
     int columnas;

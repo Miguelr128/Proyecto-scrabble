@@ -1,7 +1,7 @@
 using namespace std;
 #include "tablero.h"
 
-tablero::tablero(int f, int c) : filas(f), columnas(c), casillas(new casilla**[f]) {
+tablero::tablero() : filas(13), columnas(13), casillas(new casilla**[13]) {
     for (int i = 0; i < filas; i++) {
         casillas[i] = new casilla*[columnas];
     }
@@ -14,6 +14,10 @@ tablero::tablero(int f, int c) : filas(f), columnas(c), casillas(new casilla**[f
     amarillo();
     azul();
     verde();
+}
+
+casilla*** tablero::getCasillas() {
+    return casillas;
 }
 
 void tablero::rosado(){
@@ -112,10 +116,6 @@ void tablero::duplicarValorPalabra() {
                         duplicado = suma * 2;
                     }
                 }
-}
-
-void tablero::validarPalabraSistema() {
-    
 }
 
 tablero::~tablero() {

@@ -77,7 +77,7 @@ int main() {
         switch (opcion) {
             case 1: {
                 system("cmd /c cls");
-                tablero* tab = new tablero(8, 13);
+                tablero* tab = new tablero();
                 cout << "Digite el nombre del primer Jugador" << endl;
                 cout<<"Nombre: ";
                 cin >> nombreJug1;
