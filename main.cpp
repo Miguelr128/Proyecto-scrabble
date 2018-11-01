@@ -32,7 +32,7 @@ int main() {
 
     archivo_dic.open("diccionario.txt", ios::in);
     archivo_fic.open("fichas.txt", ios::in);
-    archivo_guardar.open("datos.txt", ios::out);
+    archivo_guardar.open("datos.txt", ios::in);
     vectorficha* fichasSistema = new vectorficha();
     diccionario* palabrasDiccionario = new diccionario(1551);
     
@@ -51,15 +51,10 @@ int main() {
     while (!archivo_dic.eof()) {
         getline(archivo_dic, linea_dic);
         stringstream r(linea_dic);
-
-            getline(r, palabra_dic, '\n');
-            palabrasDiccionario->agregar(palabra_dic);
+        getline(r, palabra_dic, '\n');
+        palabrasDiccionario->agregar(palabra_dic);
     }
     
-//    cout<<palabrasDiccionario->toString();
-//    cout<<fichasSistema->toString();
-    
-
     do {
         system("cmd /c color 79");
         system("cmd /c cls");

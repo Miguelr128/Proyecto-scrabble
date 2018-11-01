@@ -19,13 +19,10 @@ public:
     void finalizarJuego();
     bool validarPalabraVFJ(string, int, jugador*);
     string ganador();
-    void encontrarPalabraFormada();
 private:
     jugador* primerJugador;
     tablero* ptrTablero;
     diccionario* dic;
-//    int puntajeTotal;
-//    int puntajeTurno;
     bool finalizar;
 };
 #endif /* SISTEMA_H */

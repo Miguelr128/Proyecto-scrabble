@@ -141,7 +141,6 @@ void sistema::turno(int p, jugador* j) {
 }
 
 void sistema::iniciarJuego(){
-    string palabra;
     int opcion, contador;
     char terminar;
     jugador* jugador2 = primerJugador->getOtroJugador();

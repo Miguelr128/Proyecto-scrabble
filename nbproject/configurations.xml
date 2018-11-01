@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>archivo.h</itemPath>
       <itemPath>casilla.h</itemPath>
       <itemPath>diccionario.h</itemPath>
       <itemPath>ficha.h</itemPath>
@@ -20,6 +21,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>archivo.cpp</itemPath>
       <itemPath>casilla.cpp</itemPath>
       <itemPath>diccionario.cpp</itemPath>
       <itemPath>ficha.cpp</itemPath>
@@ -52,6 +54,10 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="archivo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="archivo.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="casilla.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="casilla.h" ex="false" tool="3" flavor2="0">
@@ -107,6 +113,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="archivo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="archivo.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="casilla.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="casilla.h" ex="false" tool="3" flavor2="0">

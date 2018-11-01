@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/archivo.o \
 	${OBJECTDIR}/casilla.o \
 	${OBJECTDIR}/diccionario.o \
 	${OBJECTDIR}/ficha.o \
@@ -69,6 +70,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/proyecto-scrabble.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/proyecto-scrabble ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/archivo.o: archivo.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/archivo.o archivo.cpp
 
 ${OBJECTDIR}/casilla.o: casilla.cpp
 	${MKDIR} -p ${OBJECTDIR}
