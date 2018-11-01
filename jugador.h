@@ -19,6 +19,7 @@ public:
     string getNombre();
     bool getTurno();
     int getPuntos();
+    void eliminar(int);
     void setTurno(bool);
     ficha* getFicha(int);
     string formarPalabra(string[], int);

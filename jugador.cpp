@@ -44,6 +44,10 @@ void jugador::pasarTurno() {
     turno = false;
 }
 
+void jugador::eliminar(int i){
+    ptrVectorFichas->eliminar(i);
+}
+
 vectorfichajugador* jugador::getPtrVectorFichas() {
     return ptrVectorFichas;
 }

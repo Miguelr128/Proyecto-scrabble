@@ -60,15 +60,16 @@ bool sistema::palabrasIguales(string palabra1, string palabra2){
 
 void sistema::turno(int p, jugador* j) {
     string fich, palabra, palabraFormada;
-    bool terminar = false;
+    bool terminarTurno = false;
     int fila, columna, i, lon, contador = 1, posicion;
     jugador* j1 = j;
-    switch (p) {
+    switch (p) {                    
         case 1:
         {
-            while (terminar != true) {
+            while (terminarTurno != true) {
                 ficha* fit = NULL;
-                int opcion = 2;
+                int opcion2 = 2;
+                string palabraFormada;
                 cout<<"Digite la palabra que desea formar: ";
                 cin>>palabra;
                 cout<<endl;
@@ -76,28 +77,34 @@ void sistema::turno(int p, jugador* j) {
                 cin >> lon;
                 int pos,e = 0;
                 int vecFic[lon];
-                while(opcion != 1){
-                    cout << " Digite la ficha y la posicion en la que se encuentra la ficha respectivamente para formar la palabra" <<endl;
+                while(opcion2 != 1){
+                    cout << " Digite la ficha y la posicion en la que se encuentra la ficha respectivamente para formar la palabra (Hacerlo en el orden correcto)" <<endl;
+                    cout<<"Letra: ";
                     cin>>fich;
+                    cout<<"Posicion: ";
                     cin>>posicion;
-                    if (validarPalabraVFJ(fich, posicion, j1) == true) {
+                    cout<<endl;
+                    if (validarPalabraVFJ(fich, posicion, j) == true) {
                         vecFic[e] = posicion;
+                        palabraFormada = palabraFormada + fich;
                         e++;
                     }
-                    else if (validarPalabraVFJ(fich, posicion, j1) == false){
+                    else if (validarPalabraVFJ(fich, posicion, j) == false){
                         cout << "La ficha no se encuentra" << endl;
                     }
-                    
+
                     cout << "Termino de formar la palabra?" <<endl;
                     cout << "[1] Sí" << endl;
                     cout << "[2] No" << endl;
-                    cin>>opcion;
+                    cout<<"Opcion: ";
+                    cin>>opcion2;
+                    cout<<endl;
                 }
-                if (dic->validarPalabra(palabra) == true) {
+                if (dic->validarPalabra(palabra) == true && palabrasIguales(palabra, palabraFormada) == true) {
                     for (int i = 0; i < lon; i++) {
                         pos = vecFic[i];
-                        cout<<pos<<endl;
-                        fit = j1->getFicha(pos);
+                        fit = j->getFicha(pos);
+                        cout<<"Ficha: "<<fit->toString()<<endl;
                         cout << endl;
                         cout << "Digite la posicion en la que desea colocar las fichas en el orden que foman la palabra" << endl;
                         cout << "fila: ";
@@ -107,14 +114,15 @@ void sistema::turno(int p, jugador* j) {
                         cin>>columna;
                         cout << endl;
                         ptrTablero->reservarPosicion(fila, columna, fit);
-                        cout << ptrTablero->toString() << endl;
+                        cout << ptrTablero->toString() << endl<<endl;
+                        j->eliminar(pos);
                     }
-                    j1->puntosPorPalabra(fila, columna);
-                    cout<<"Puntos acumulados: "<<j1->getPuntos()<<endl<<endl;
-                    j1->pasarTurno();
-                    terminar = true;
+                    j->puntosPorPalabra(fila, columna);
+                    cout<<"Puntos acumulados: "<<j->getPuntos()<<endl<<endl;
+                    j->pasarTurno();
+                    terminarTurno = true;
                 } else
-                    cout << "La palabra no existe en el diccionario" << endl;
+                    cout << "La palabra no existe en el diccionario o las fichas escogidas no forman la palabra" << endl;
             }
             break;
         }
@@ -122,11 +130,11 @@ void sistema::turno(int p, jugador* j) {
         case 2:
             j->nuevasFichas();
             break;
-            
+
         case 3:
             j->pasarTurno();
             break;
-            
+
         default:
             cout<<"La opcion no es valida"<<endl;
     }
@@ -134,7 +142,7 @@ void sistema::turno(int p, jugador* j) {
 
 void sistema::iniciarJuego(){
     string palabra;
-    int fila, columna, opcion, contador;
+    int opcion, contador;
     char terminar;
     jugador* jugador2 = primerJugador->getOtroJugador();
     while(finalizar != true){
