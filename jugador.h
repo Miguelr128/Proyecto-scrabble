@@ -21,6 +21,7 @@ public:
     int getPuntos();
     void eliminar(int);
     void setTurno(bool);
+    void setPuntos(int);
     ficha* getFicha(int);
     string formarPalabra(string[], int);
     void colocarFicha(int, int, ficha*);

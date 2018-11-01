@@ -58,7 +58,7 @@ bool sistema::palabrasIguales(string palabra1, string palabra2){
     return false;
 }
 
-void sistema::turno(int p, jugador* j) {
+void sistema::turno(int p, jugador* j, int ronda) {
     string fich, palabra, palabraFormada;
     bool terminarTurno = false;
     int fila, columna, i, lon, contador = 1, posicion;
@@ -117,6 +117,10 @@ void sistema::turno(int p, jugador* j) {
                         cout << ptrTablero->toString() << endl<<endl;
                         j->eliminar(pos);
                     }
+                    if(ronda == 1 && puntosScrabble(palabra) == true){
+                        j->setPuntos(100);
+                        cout<<"100 puntos extras por usar todas las fichas"<<endl<<endl;
+                    }
                     j->puntosPorPalabra(fila, columna);
                     cout<<"Puntos acumulados: "<<j->getPuntos()<<endl<<endl;
                     j->pasarTurno();
@@ -142,9 +146,11 @@ void sistema::turno(int p, jugador* j) {
 
 void sistema::iniciarJuego(){
     int opcion, contador;
+    int ronda = 0;
     char terminar;
     jugador* jugador2 = primerJugador->getOtroJugador();
     while(finalizar != true){
+        ronda = ronda + 1;
         contador = 0;
         cout<<ptrTablero->toString()<<endl<<endl;
         cout<<"Turno de: "<<primerJugador->getNombre()<<endl;
@@ -156,7 +162,7 @@ void sistema::iniciarJuego(){
             cout<<"3. Pasar turno"<<endl;
             cout<<"Opcion: ";
             cin>>opcion;
-            turno(opcion, primerJugador);
+            turno(opcion, primerJugador, ronda);
             jugador2->setTurno(true);
         }
         if(opcion == 3){
@@ -172,7 +178,7 @@ void sistema::iniciarJuego(){
             cout<<"3. Pasar turno"<<endl;
             cout<<"Opcion: ";
             cin>>opcion;
-            turno(opcion, jugador2);
+            turno(opcion, jugador2, ronda);
             primerJugador->setTurno(true);
         }
         if(opcion == 3){

@@ -32,6 +32,10 @@ void jugador::setTurno(bool b){
     turno = b;
 }
 
+void jugador::setPuntos(int p){
+    puntos = puntos + p;
+}
+
 void jugador::fichasInicio() {
     ptrVectorFichas->primerasFichas();
 }
