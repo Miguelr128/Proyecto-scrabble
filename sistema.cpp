@@ -9,11 +9,11 @@ sistema::sistema(jugador* j, tablero* t, diccionario* d) : primerJugador(j), ptr
 string sistema::ganador(){
     stringstream s;
     jugador* jugador2 = primerJugador->getOtroJugador();
-    if(primerJugador->getPuntaje() == jugador2->getPuntaje()){
+    if(primerJugador->getPuntos() == jugador2->getPuntos()){
         s<<"Empate";
     }
     else
-        if(primerJugador->getPuntaje() > jugador2->getPuntaje()){
+        if(primerJugador->getPuntos() > jugador2->getPuntos()){
             s<<"Primer jugador es el ganador";
         }
         else
@@ -101,6 +101,7 @@ void sistema::turno(int p, jugador* j, int ronda) {
                     cout<<endl;
                 }
                 if (dic->validarPalabra(palabra) == true && palabrasIguales(palabra, palabraFormada) == true) {
+                    ptrArchivo->guardarPalabras(palabra, j);
                     for (int i = 0; i < lon; i++) {
                         pos = vecFic[i];
                         fit = j->getFicha(pos);
@@ -123,7 +124,7 @@ void sistema::turno(int p, jugador* j, int ronda) {
                     }
                     j->puntosPorPalabra(fila, columna);
                     cout<<"Puntos acumulados: "<<j->getPuntos()<<endl<<endl;
-//                    ptrArchivo ->escribir(palabra, j->getPuntos());
+                    ptrArchivo->guardarPuntaje(j->getPuntos(),j);
                     j->pasarTurno();
                     terminarTurno = true;
                 } else
@@ -198,6 +199,7 @@ void sistema::iniciarJuego(){
             cout<<"El juego ha terminado"<<endl;
         }
     }
+    ganador();
 }
 
 sistema::~sistema() {

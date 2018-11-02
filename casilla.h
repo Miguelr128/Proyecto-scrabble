@@ -12,6 +12,7 @@ public:
     char getColor();
     ficha* getFicha();
     int getPuntos();
+    string getLetra();
     void setColor(char);
     void setFicha(ficha*);
     void duplicarValorFicha();

@@ -16,8 +16,12 @@ tablero::tablero() : filas(13), columnas(13), casillas(new casilla**[13]) {
     verde();
 }
 
-casilla*** tablero::getCasillas() {
-    return casillas;
+ficha* tablero::getFicha(int i, int j) {
+    return casillas[i][j]->getFicha();
+}
+
+string tablero::getLetra(int i, int j){
+    return casillas[i][j]->getLetra();
 }
 
 void tablero::rosado(){

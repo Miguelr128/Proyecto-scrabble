@@ -14,7 +14,6 @@ class jugador {
 public:
     jugador(string, vectorficha*, jugador*, tablero*, bool);
     virtual ~jugador();
-    int getPuntaje();
     jugador* getOtroJugador();
     string getNombre();
     bool getTurno();

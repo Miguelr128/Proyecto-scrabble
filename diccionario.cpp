@@ -1,6 +1,6 @@
 #include "diccionario.h"
 
-diccionario::diccionario(int a): tamano(a), cantidad(0), palabras(new string[a]), ptrTablero (new tablero***()) {
+diccionario::diccionario(int a, tablero* tab): tamano(a), cantidad(0), palabras(new string[a]), ptrTablero(tab) {
 }
 
 void diccionario::agregar(string pa){
@@ -30,13 +30,13 @@ bool diccionario::validarPalabra(string comparando) {
 }
 
 bool diccionario::validarPalabraTablero() {
-    string aux = "";
+    string aux;
     for (int i=0; i<13; i++)
         for (int e=0; e<13; e++)
-            if (ptrTablero[i][e] != NULL) {
+            if (ptrTablero->getFicha(i, e) != NULL) {
                 for (int x=0; x<13; x++)
-                    if (ptrTablero[x][e] != NULL) {
-                        aux = aux + ptrTablero[x][e]->getCasillas()->getFicha()->getLetra();
+                    if (ptrTablero->getFicha(x, e) != NULL) {
+                        aux = aux + ptrTablero->getLetra(x, e);
                     }
                 validarPalabra(aux);
             }

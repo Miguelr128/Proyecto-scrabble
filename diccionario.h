@@ -6,7 +6,7 @@
 
 class diccionario {
 public:
-    diccionario(int);
+    diccionario(int, tablero*);
     virtual ~diccionario();
     void agregar(string);
     string toString();
@@ -17,6 +17,6 @@ private:
     int cantidad;
     int tamano;
     jugador* palabra;
-    tablero**** ptrTablero;
+    tablero* ptrTablero;
 };
 #endif /* DICCIONARIO_H */

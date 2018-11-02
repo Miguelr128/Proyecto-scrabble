@@ -4,10 +4,6 @@ jugador::jugador(string nombre, vectorficha* fi, jugador* j2,tablero* tab, bool 
 , otroJugador(j2), juego(tab), ptrVectorFichas(new vectorfichajugador(7, fi)) {
 }
 
-int jugador::getPuntaje(){
-    return puntos;
-}
-
 jugador* jugador::getOtroJugador(){
     return otroJugador;
 }

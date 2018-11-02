@@ -32,7 +32,8 @@ int main() {
     archivo_dic.open("diccionario.txt", ios::in);
     archivo_fic.open("fichas.txt", ios::in);
     vectorficha* fichasSistema = new vectorficha();
-    diccionario* palabrasDiccionario = new diccionario(1551);
+    tablero* tab = new tablero();
+    diccionario* palabrasDiccionario = new diccionario(1551, tab);
     
     while (archivo_fic.good()) {
         getline(archivo_fic, linea_fic);
@@ -70,7 +71,6 @@ int main() {
         switch (opcion) {
             case 1: {
                 system("cmd /c cls");
-                tablero* tab = new tablero();
                 cout << "Digite el nombre del primer Jugador" << endl;
                 cout<<"Nombre: ";
                 cin >> nombreJug1;

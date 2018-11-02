@@ -17,7 +17,8 @@ public:
     void verde();
     void azul();
     void duplicarValorPalabra();
-    casilla*** getCasillas();
+    ficha* getFicha(int, int);
+    string getLetra(int, int);
     virtual ~tablero();
 private:
     int filas;

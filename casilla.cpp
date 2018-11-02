@@ -21,6 +21,10 @@ int casilla::getPuntos(){
     return fichaColocada->getValorLetra();
 }
 
+string casilla::getLetra(){
+    return fichaColocada->getLetra();
+}
+
 void casilla::setFicha(ficha* f){
     fichaColocada = f;
 }
