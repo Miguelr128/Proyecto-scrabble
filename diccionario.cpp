@@ -30,15 +30,16 @@ bool diccionario::validarPalabra(string comparando) {
 }
 
 bool diccionario::validarPalabraTablero() {
-//    string aux = "";
-//    for (int i=0; i<13; i++)
-//        for (int e=0; e<13; e++)
-//            if (ptrTablero[i][e] != NULL) {
-//                for (int x=0; x<13; x++)
-//                    if (ptrTablero[x][e] != NULL) {
-//                        aux = aux + ptrTablero[x][e]->getCasillas()->getFicha()->getLetra();
-//                    }
-//            }
+    string aux = "";
+    for (int i=0; i<13; i++)
+        for (int e=0; e<13; e++)
+            if (ptrTablero[i][e] != NULL) {
+                for (int x=0; x<13; x++)
+                    if (ptrTablero[x][e] != NULL) {
+                        aux = aux + ptrTablero[x][e]->getCasillas()->getFicha()->getLetra();
+                    }
+                validarPalabra(aux);
+            }
 }
 
 diccionario::~diccionario() {

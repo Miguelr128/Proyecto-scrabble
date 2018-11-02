@@ -23,7 +23,6 @@ int main() {
     string letra_fic;
     int valorLetra_fic;
     int i = 0;
-    fstream archivo_guardar;
     
     int opcion;
     bool seguirPrograma = true;
@@ -32,7 +31,6 @@ int main() {
 
     archivo_dic.open("diccionario.txt", ios::in);
     archivo_fic.open("fichas.txt", ios::in);
-    archivo_guardar.open("datos.txt", ios::in);
     vectorficha* fichasSistema = new vectorficha();
     diccionario* palabrasDiccionario = new diccionario(1551);
     
@@ -103,7 +101,6 @@ int main() {
     
     archivo_dic.close();
     archivo_fic.close();
-    archivo_guardar.close();
     delete fichasSistema;
     delete palabrasDiccionario;
     return 0;

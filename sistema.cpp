@@ -3,7 +3,7 @@
 
 using namespace std;
 
-sistema::sistema(jugador* j, tablero* t, diccionario* d):primerJugador(j), ptrTablero(t), dic(d), finalizar(false) {
+sistema::sistema(jugador* j, tablero* t, diccionario* d) : primerJugador(j), ptrTablero(t), dic(d), finalizar(false), ptrArchivo (new archivo()) {
 }
 
 string sistema::ganador(){
@@ -123,6 +123,7 @@ void sistema::turno(int p, jugador* j, int ronda) {
                     }
                     j->puntosPorPalabra(fila, columna);
                     cout<<"Puntos acumulados: "<<j->getPuntos()<<endl<<endl;
+//                    ptrArchivo ->escribir(palabra, j->getPuntos());
                     j->pasarTurno();
                     terminarTurno = true;
                 } else

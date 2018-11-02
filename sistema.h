@@ -4,6 +4,7 @@
 #include "jugador.h"
 #include "tablero.h"
 #include "diccionario.h"
+#include "archivo.h"
 
 class sistema {
 public:
@@ -24,5 +25,6 @@ private:
     tablero* ptrTablero;
     diccionario* dic;
     bool finalizar;
+    archivo* ptrArchivo;
 };
 #endif /* SISTEMA_H */

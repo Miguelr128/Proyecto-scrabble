@@ -2,13 +2,12 @@
 #define ARCHIVO_H
 
 #include <fstream>
-#include "jugador.h"
 
 class archivo {
 public:
     archivo();
     virtual ~archivo();
-private:
-    fstream fout;
+//    void escribir(string, int);
+//    void leer();
 };
 #endif /* ARCHIVO_H */
