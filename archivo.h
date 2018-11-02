@@ -12,6 +12,11 @@ public:
     virtual ~archivo();
     void guardarPalabras(string, jugador*);
     void guardarPuntaje(int, jugador*);
-//    void leer();
+    void leer();
+    string toString();
+private:
+    int cantidad;
+    int puntos;
+    string palabra;
 };
 #endif /* ARCHIVO_H */

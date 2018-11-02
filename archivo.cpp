@@ -1,6 +1,6 @@
 #include "archivo.h"
 
-archivo::archivo() {
+archivo::archivo() : cantidad (0), puntos (0), palabra("") {
 }
 
 archivo::~archivo() {
@@ -28,16 +28,19 @@ void archivo::guardarPuntaje(int punt, jugador* j){
     fout.close();
 }
 
-//
-//void archivo::leer() {
-//    ifstream fin;
-//    string aux;
-//    fin.open("datos.txt", ios::in);
-//    if (fin.fail()) {
-//        exit(1);
-//    }
-//    while (!fin.eof()) {
-//        getline (fin, aux);
-//    }
-//    fin.close();
-//}
+void archivo::leer() {
+    ifstream fin;
+    string aux;
+    fin.open("datos.txt", ios::in);
+    if (fin.fail()) {
+        exit(1);
+    }
+    while (!fin.eof()) {
+        getline (fin, aux);
+    }
+    fin.close();
+}
+
+string archivo::toString() {
+    
+}

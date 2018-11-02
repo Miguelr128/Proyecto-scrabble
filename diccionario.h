@@ -11,7 +11,8 @@ public:
     void agregar(string);
     string toString();
     bool validarPalabra(string);
-    bool validarPalabraTablero();
+    bool validarPalabraTableroA();
+    bool validarPalabraTableroI();
 private:
     string* palabras;
     int cantidad;

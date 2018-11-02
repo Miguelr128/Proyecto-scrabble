@@ -29,17 +29,62 @@ bool diccionario::validarPalabra(string comparando) {
     return false;
 }
 
-bool diccionario::validarPalabraTablero() {
-    string aux;
-    for (int i=0; i<13; i++)
-        for (int e=0; e<13; e++)
+bool diccionario::validarPalabraTableroA() {
+    string aux = "";
+    int cont = 0;
+    for (int i = 0; i < 13; i++)
+        for (int e = 0; e < 13; e++)
             if (ptrTablero->getFicha(i, e) != NULL) {
-                for (int x=0; x<13; x++)
-                    if (ptrTablero->getFicha(x, e) != NULL) {
-                        aux = aux + ptrTablero->getLetra(x, e);
+                for (int x = 0; x < 13; x++) {
+                    if (ptrTablero->getFicha(x, e) != NULL && ptrTablero->getFicha(x + 1, e) != NULL) {
+                        aux = aux + ptrTablero->getFicha(x, e)->getLetra();
                     }
-                validarPalabra(aux);
+                    cont = x;
+                }
+                aux = aux + ptrTablero->getFicha(cont, e)->getLetra();
+                if (validarPalabra(aux) == true)
+                    return true;
+                int z = cont + 1;
+                for (int z; z < 13; z++) {
+                    if (ptrTablero->getFicha(z, e) != NULL && ptrTablero->getFicha(z + 1, e) != NULL) {
+                        aux = aux + ptrTablero->getFicha(z, e)->getLetra();
+                    }
+                    cont = z;
+                }
+                aux = aux + ptrTablero->getFicha(cont, e)->getLetra();
+                if (validarPalabra(aux) == true)
+                    return true;
             }
+    return false;
+}
+
+bool diccionario::validarPalabraTableroI() {
+    string aux = "";
+    int cont = 0;
+    for (int i = 0; i < 13; i++)
+        for (int e = 0; e < 13; e++)
+            if (ptrTablero->getFicha(i, e) != NULL) {
+                for (int x = 0; x < 13; x++) {
+                    if (ptrTablero->getFicha(i, x) != NULL && ptrTablero->getFicha(i, x + 1) != NULL) {
+                        aux = aux + ptrTablero->getFicha(i, x)->getLetra();
+                    }
+                    cont = x;
+                }
+                aux = aux + ptrTablero->getFicha(i, cont)->getLetra();
+                if (validarPalabra(aux) == true)
+                    return true;
+                int z = cont + 1;
+                for (int z; z < 13; z++) {
+                    if (ptrTablero->getFicha(i, z) != NULL && ptrTablero->getFicha(i, z + 1) != NULL) {
+                        aux = aux + ptrTablero->getFicha(i, z)->getLetra();
+                    }
+                    cont = z;
+                }
+                aux = aux + ptrTablero->getFicha(i, cont)->getLetra();
+                if (validarPalabra(aux) == true)
+                    return true;
+            }
+    return false;
 }
 
 diccionario::~diccionario() {
