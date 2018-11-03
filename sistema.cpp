@@ -141,10 +141,23 @@ void sistema::turno(int p, jugador* j, int ronda) {
         }
 
         case 2:
+            if(j->estaLleno()){
+                cout<<"Ya tiene la cantidad de fichas maximas"<<endl;
+            }
+            else{
             j->nuevasFichas();
+            }
+            break;
+            
+        case 3:
+            int p;
+            cout<<"Digite la posicion de la ficha que desea cambiar: ";
+            cin>>p;
+            j->cambiarFichas(p);
+            j->pasarTurno();
             break;
 
-        case 3:
+        case 4:
             j->pasarTurno();
             break;
 
@@ -168,7 +181,8 @@ void sistema::iniciarJuego(){
             cout<<primerJugador->toString()<<endl<<endl;
             cout<<"1. Colocar palabra"<<endl;
             cout<<"2. Pedir fichas"<<endl;
-            cout<<"3. Pasar turno"<<endl;
+            cout<<"3. Cambiar fichas"<<endl;
+            cout<<"4. Pasar turno"<<endl;
             cout<<"Opcion: ";
             cin>>opcion;
             turno(opcion, primerJugador, ronda);
@@ -184,7 +198,8 @@ void sistema::iniciarJuego(){
             cout<<jugador2->toString()<<endl<<endl;
             cout<<"1. Colocar palabra"<<endl;
             cout<<"2. Pedir fichas"<<endl;
-            cout<<"3. Pasar turno"<<endl;
+            cout<<"3. Cambiar fichas"<<endl;
+            cout<<"4. Pasar turno"<<endl;
             cout<<"Opcion: ";
             cin>>opcion;
             turno(opcion, jugador2, ronda);

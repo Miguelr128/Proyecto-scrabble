@@ -24,6 +24,7 @@ int main() {
     int valorLetra_fic;
     int i = 0;
     
+    
     int opcion;
     bool seguirPrograma = true;
     string nombreJug1;

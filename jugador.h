@@ -28,6 +28,7 @@ public:
     void fichasInicio();
     void cambiarFichas(int);
     void pasarTurno();
+    bool estaLleno();
     void cambiarComodin(int, string);
     void puntosPorPalabra(int, int);
     string toString();

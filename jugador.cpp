@@ -52,6 +52,10 @@ vectorfichajugador* jugador::getPtrVectorFichas() {
     return ptrVectorFichas;
 }
 
+bool jugador::estaLleno(){
+    ptrVectorFichas->estaLleno();
+}
+
 string jugador::formarPalabra(string ficha[], int j) {
     string palabra;
     for(int i = 0; i < j; i++){

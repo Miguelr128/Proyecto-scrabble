@@ -15,6 +15,7 @@ public:
     void primerasFichas();
     void nuevasFichas();
     void cambiar(int);
+    bool estaLleno();
     void cambiarComodin(int, string);
     ficha* buscarFicha(int);
     string toString();

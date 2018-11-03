@@ -43,6 +43,14 @@ void vectorfichajugador::cambiar(int i){
     fichasSistema->setFicha(numero, aux);
 }
 
+bool vectorfichajugador::estaLleno(){
+    for(int i = 0; i < cantidad; i++){
+        if(vector[i] == NULL)
+            return false;
+    }
+    return true;
+}
+
 void vectorfichajugador::nuevasFichas(){
     int numero, rango = fichasSistema->getCantidad();
     for (int i = 0; i < tamano; i++) {
@@ -66,6 +74,7 @@ ficha* vectorfichajugador::buscarFicha(int i){
 
 string vectorfichajugador::toString(){
     stringstream s;
+    s<<"  0   1   2   3   4   5   6"<<endl;
     s<<"| ";
     for(int i = 0; i < cantidad; i++){
         if(vector[i]==NULL){
