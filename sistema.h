@@ -11,7 +11,6 @@ public:
     sistema(jugador*, tablero*, diccionario*);
     virtual ~sistema();
     bool getFinalizar();
-//    string toString();
     void sumarPuntos(jugador*, int, int);
     bool puntosScrabble(string);
     void iniciarJuego();

@@ -59,6 +59,21 @@ void tablero::verde(){
     casillas[7][12]->setColor('V');
 }
 
+void tablero::eliminarPalabra(int f, int c, int lon, int dic) {
+    if (dic == 2) {
+        for (int x = 0; x < lon; x++) {
+            casillas[f][c] = NULL;
+            f--;
+        }
+    }
+    if (dic == 1) {
+        for (int x = 0; x < lon; x++) {
+            casillas[f][c] = NULL;
+            c--;
+        }
+    }
+}
+
 void tablero::duplicarValorPalabra() {
     int duplicado;
     int suma = 0;

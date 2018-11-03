@@ -19,6 +19,7 @@ public:
     void duplicarValorPalabra();
     ficha* getFicha(int, int);
     string getLetra(int, int);
+    void eliminarPalabra(int, int, int, int);
     virtual ~tablero();
 private:
     int filas;

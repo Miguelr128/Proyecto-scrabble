@@ -8,7 +8,7 @@ archivo::~archivo() {
 
 void archivo::guardarPalabras(string palabras, jugador* j) {
     ofstream fout;
-    fout.open("palabras.txt", ios::out);
+    fout.open("palabras.txt", ios::app);
     if (fout.fail()) {
         exit(1);
     }
@@ -19,7 +19,7 @@ void archivo::guardarPalabras(string palabras, jugador* j) {
 
 void archivo::guardarPuntaje(int punt, jugador* j){
     ofstream fout;
-    fout.open("puntaje.txt", ios::out);
+    fout.open("puntaje.txt", ios::app);
     if (fout.fail()) {
         exit(1);
     }

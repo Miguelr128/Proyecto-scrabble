@@ -75,7 +75,7 @@ void sistema::turno(int p, jugador* j, int ronda) {
                 cout<<endl;
                 cout << "Digite la cantidad de letras que posee la palabra que va a formar" << endl;
                 cin >> lon;
-                int pos,e = 0;
+                int pos,e = 0, d;
                 int vecFic[lon];
                 while(opcion2 != 1){
                     cout << " Digite la ficha y la posicion en la que se encuentra la ficha respectivamente para formar la palabra (Hacerlo en el orden correcto)" <<endl;
@@ -102,6 +102,8 @@ void sistema::turno(int p, jugador* j, int ronda) {
                 }
                 if (dic->validarPalabra(palabra) == true && palabrasIguales(palabra, palabraFormada) == true) {
                     ptrArchivo->guardarPalabras(palabra, j);
+                    cout << "Digite 1 si desea formar la palabra de manera horizontal y dos si desea formar la palabra de manera vertical" <<endl;
+                    cin >> d;
                     for (int i = 0; i < lon; i++) {
                         pos = vecFic[i];
                         fit = j->getFicha(pos);
@@ -115,18 +117,23 @@ void sistema::turno(int p, jugador* j, int ronda) {
                         cin>>columna;
                         cout << endl;
                         ptrTablero->reservarPosicion(fila, columna, fit);
-                        cout << ptrTablero->toString() << endl<<endl;
+                        cout << ptrTablero->toString() << endl << endl;
                         j->eliminar(pos);
                     }
-                    if(ronda == 1 && puntosScrabble(palabra) == true){
-                        j->setPuntos(100);
-                        cout<<"100 puntos extras por usar todas las fichas"<<endl<<endl;
+                    if (dic->validarPalabraTableroA() == true && dic->validarPalabraTableroI() == true) {
+                        if (ronda == 1 && puntosScrabble(palabra) == true) {
+                            j->setPuntos(100);
+                            cout << "100 puntos extras por usar todas las fichas" << endl << endl;
+                        }
+                        j->puntosPorPalabra(fila, columna);
+                        cout << "Puntos acumulados: " << j->getPuntos() << endl << endl;
+                        ptrArchivo->guardarPuntaje(j->getPuntos(), j);
+                        j->pasarTurno();
+                        terminarTurno = true;
+                    } else {
+                        cout << "En el tablero se formo una palabra no valida" << endl;
+                        ptrTablero->eliminarPalabra(fila, columna, lon, d);
                     }
-                    j->puntosPorPalabra(fila, columna);
-                    cout<<"Puntos acumulados: "<<j->getPuntos()<<endl<<endl;
-                    ptrArchivo->guardarPuntaje(j->getPuntos(),j);
-                    j->pasarTurno();
-                    terminarTurno = true;
                 } else
                     cout << "La palabra no existe en el diccionario o las fichas escogidas no forman la palabra" << endl;
             }
